@@ -40,6 +40,7 @@
         android:textColorHint="@android:color/black"
         android:textColor="@android:color/black"
         android:background="@android:color/white"
+        android:inputType="textPassword"
         android:ems="10" />
 
     <Button
