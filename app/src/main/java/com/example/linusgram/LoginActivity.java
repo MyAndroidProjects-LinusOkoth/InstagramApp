@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.linusgram.databinding.ActivityLoginBinding;
+import com.parse.LogInCallback;
+import com.parse.ParseException;
+import com.parse.ParseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,6 +41,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginUser(String username, String password) {
         Toast.makeText(LoginActivity.this, "login in"+username, Toast.LENGTH_SHORT).show();
+
+        ParseUser.logInInBackground(username, password, new LogInCallback() {
+            @Override
+            public void done(ParseUser user, ParseException e) {
+
+
+            }
+        });
 
     }
 }
