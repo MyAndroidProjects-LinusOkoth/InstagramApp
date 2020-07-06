@@ -1,8 +1,6 @@
 package com.example.linusgram;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.Bindable;
-
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
 import android.view.View;
