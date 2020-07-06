@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    buildFeatures.dataBinding = true
+    buildFeatures {
+        viewBinding true}
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
