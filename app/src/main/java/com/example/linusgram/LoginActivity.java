@@ -3,6 +3,9 @@ package com.example.linusgram;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+
+import com.example.linusgram.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -11,11 +14,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
+        ActivityLoginBinding binding = ActivityLoginBinding.inflate(getLayoutInflater());
 
-        setContentView(R.layout.activity_login);
-
-
-
+        // layout of activity is stored in a special property called root
+        View view = binding.getRoot();
+        setContentView(view);
 
     }
 }
