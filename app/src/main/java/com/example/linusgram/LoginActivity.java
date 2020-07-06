@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.linusgram.databinding.ActivityLoginBinding;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -59,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void goToMainActivity() {
 
-        Intent intent =
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
