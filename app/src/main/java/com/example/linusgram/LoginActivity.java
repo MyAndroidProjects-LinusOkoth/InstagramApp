@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
                 Log.i(TAG, "OnClick login button");
                 String username = binding.etUsername.getText().toString();
                 String password = binding.etPassword.getText().toString();
+                Toast.makeText(LoginActivity.this, "login in", Toast.LENGTH_SHORT).show();
                 loginUser(username, password);
             }
         });
@@ -48,8 +49,8 @@ public class LoginActivity extends AppCompatActivity {
             public void done(ParseUser user, ParseException e) {
                 if(e != null){
                     Log.e(TAG, "Issue with login" + e);
+                    return;
                 }
-                Toast.makeText(LoginActivity.this, "login in", Toast.LENGTH_SHORT).show();
 
                 goToMainActivity();
 
