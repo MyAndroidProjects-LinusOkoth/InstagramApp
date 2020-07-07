@@ -141,7 +141,7 @@ public class ComposeFragment extends Fragment {
         Uri fileProvider = FileProvider.getUriForFile(getContext(), "com.codepath.fileprovider", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
 
-        if(intent.resolveActivity(getPackageManager()) != null){
+        if(intent.resolveActivity(getContext().getPackageManager()) != null){
             startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
         }
 
