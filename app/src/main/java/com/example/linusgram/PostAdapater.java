@@ -1,6 +1,7 @@
 package com.example.linusgram;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,6 +73,8 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
                 Glide.with(context)
                         .load(image.getUrl())
                         .into(ivImage);
+            }else{
+                Log.i("pOSN CB ", "IMAGE NOT EXISTING" );
             }
 
 
