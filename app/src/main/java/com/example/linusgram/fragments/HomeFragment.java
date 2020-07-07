@@ -28,8 +28,8 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView rvPost;
     public static final String TAG = "HomeFragment";
-    private PostAdapater adapter;
-    private List<Post> allPosts;
+    protected PostAdapater adapter;
+    protected List<Post> allPosts;
 
 
 
