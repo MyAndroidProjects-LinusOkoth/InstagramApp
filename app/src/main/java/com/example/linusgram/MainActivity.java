@@ -1,6 +1,7 @@
 package com.example.linusgram;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.io.File;
 import java.net.URI;
 import java.util.List;
 
@@ -26,6 +28,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
+    public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
+    private File photoFile;
+    private File photoFileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +77,12 @@ public class MainActivity extends AppCompatActivity {
         photoFile = getPhotoFileUrl(photoFileName);
 
         //wrap file object into a content provider
-        URI fileprove
+        URI fileProvider = FileProvider.getUriForFile(MainActivity.this, "com.codepath.fleprovider", photoFile);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
+
+        if(intent.resolveActivity(getPackageManager()) != null){
+            startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+        }
 
     }
 
