@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,7 +33,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Post post = posts.get(position);
-        holder.bimd(post)
+        holder.bind(post);
 
     }
 
@@ -42,9 +44,26 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
 
     class ViewHolder extends  RecyclerView.ViewHolder{
 
+        private TextView tvUserName;
+        private ImageView ivImage;
+        private TextView tvDescription;
+
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvUserName = itemView.findViewById(R.id.tvName);
+            tvDescription = itemView.findViewById(R.id.tvDescription);
+            ivImage = itemView.findViewById(R.id.ivPostImage);
+
+        }
+
+        public void bind(Post post) {
+
+            tvDescription.setText(post.getDescription());
+            tvUserName.setText(post.getUser().getUsername());
+
+
         }
     }
 }
