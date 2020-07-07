@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.renderscript.ScriptGroup;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.net.URI;
 import java.util.List;
 
 
@@ -65,7 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void launchCamera() {
         //Create an intent to take pictures and return control to the app
-        Intent intent
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        //Create a file reference to access to future access
+        photoFile = getPhotoFileUrl(photoFileName);
+
+        //wrap file object into a content provider
+        URI fileprove
 
     }
 
