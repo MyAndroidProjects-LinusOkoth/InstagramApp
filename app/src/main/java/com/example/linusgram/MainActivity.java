@@ -94,6 +94,19 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Fragment fragment;
+                switch (item.getItemId()) {
+                    case R.id.action_home:
+                        fragment = fragment1;
+                        break;
+                    case R.id.action_compose:
+                        fragment = fragment2;
+                        break;
+                    case R.id.action_profile:
+                    default:
+                        fragment = fragment3;
+                        break;
+                }
 
             }
         });
