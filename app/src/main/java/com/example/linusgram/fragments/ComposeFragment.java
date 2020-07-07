@@ -53,10 +53,6 @@ public class ComposeFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static ComposeFragment newInstance(String param1, String param2) {
-
-    }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
