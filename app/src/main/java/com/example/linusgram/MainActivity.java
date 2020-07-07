@@ -1,6 +1,8 @@
 package com.example.linusgram;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
 import android.util.Log;
@@ -51,6 +53,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.btnCaptureImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchCamera();
+            }
+        });
+
+
+    }
+
+    private void launchCamera() {
+        //Create an intent to take pictures and return control to the app
+        Intent intent
 
     }
 
