@@ -35,6 +35,8 @@ import com.parse.SaveCallback;
 import java.io.File;
 import java.util.List;
 
+import static android.app.Activity.RESULT_OK;
+
 
 public class ComposeFragment extends Fragment {
 
@@ -45,6 +47,7 @@ public class ComposeFragment extends Fragment {
     private Button btnSubmit;
     File photoFile;
     public String photoFileName = "photo.jpg";
+    public static final String TAG = "ComposeFragment";
 
     public ComposeFragment() {
         // Required empty public constructor
@@ -121,7 +124,7 @@ public class ComposeFragment extends Fragment {
                 Bitmap takenImage = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
                 // RESIZE BITMAP, see section below
                 // Load the taken image into a preview
-                binding.ivPostImage.setImageBitmap(takenImage);
+                ivPostImage.setImageBitmap(takenImage);
             } else { // Result was a failure
                 Toast.makeText(this, "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
