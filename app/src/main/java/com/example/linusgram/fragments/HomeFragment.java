@@ -13,18 +13,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.linusgram.Post;
+import com.example.linusgram.PostAdapater;
 import com.example.linusgram.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class HomeFragment extends Fragment {
 
     private RecyclerView rvPost;
-    public static final String TAG = "HomeFragment";
+    public static final String TAG = "HomeFragment";\
+    private PostAdapater adapter;
+    private List<Post> allPosts;
 
 
 
@@ -36,6 +40,20 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rvPost = view.findViewById(R.id.rvPost);
+
+        allPosts = new ArrayList<>();
+
+        adapter = new PostAdapater(getContext(), allPosts)
+
+
+
+
+
+
+
+
+
+
         queryPost();
 
 
