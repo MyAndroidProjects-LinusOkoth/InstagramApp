@@ -18,6 +18,8 @@ import com.example.linusgram.MainActivity;
 import com.example.linusgram.R;
 import com.parse.ParseUser;
 
+import java.io.File;
+
 
 public class ComposeFragment extends Fragment {
 
@@ -26,6 +28,8 @@ public class ComposeFragment extends Fragment {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
+    File photoFile;
+    public String photoFileName = "photo.jpg";
 
     public ComposeFragment() {
         // Required empty public constructor
