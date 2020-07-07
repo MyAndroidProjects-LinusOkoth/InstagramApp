@@ -36,5 +36,7 @@ dependencies {
     apply plugin: 'com.android.application'
     implementation 'com.github.parse-community.Parse-SDK-Android:parse:1.24.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "com.google.android.material:material:${designSupportVersion}"
 
 }
