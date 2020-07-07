@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.example.linusgram.databinding.ActivityMainBinding;
 import com.example.linusgram.fragments.ComposeFragment;
 import com.example.linusgram.fragments.HomeFragment;
+import com.example.linusgram.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.Parse;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         //define your fragments here
         final Fragment composeFragment = new ComposeFragment();
         final Fragment homeFragment = new HomeFragment();
-        final Fragment profileFragment = new ComposeFragment();
+        final Fragment profileFragment = new ProfileFragment();
 
         // layout of activity is stored in a special property called root
         View view = binding.getRoot();
