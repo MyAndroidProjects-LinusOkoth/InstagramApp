@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.linusgram.databinding.ActivityMainBinding;
+import com.example.linusgram.fragments.ComposeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.Parse;
@@ -53,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
         final FragmentManager fragmentManager = getSupportFragmentManager();
 
         //define your fragments here
-        final Fragment fragment1 = new FirstFragment();
-        final Fragment fragment2 = new SecondFragment();
-        final Fragment fragment3 = new ThirdFragment();
+        final Fragment composeFragment = new ComposeFragment();
+        final Fragment homeFragment = new ComposeFragment();
+        final Fragment profileFragment = new ComposeFragment();
 
         // layout of activity is stored in a special property called root
         View view = binding.getRoot();
@@ -73,15 +74,18 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_home:
                         Toast.makeText(MainActivity.this, "Home",
                                 Toast.LENGTH_SHORT).show();
+                        fragment = homeFragment;
                         break;
                     case R.id.action_compose:
                         Toast.makeText(MainActivity.this, "Compose",
                                 Toast.LENGTH_SHORT).show();
+                        fragment = composeFragment;
                         break;
                     case R.id.action_profile:
                     default:
                         Toast.makeText(MainActivity.this, "Profile",
                                 Toast.LENGTH_SHORT).show();
+                        fragment = profileFragment;
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
