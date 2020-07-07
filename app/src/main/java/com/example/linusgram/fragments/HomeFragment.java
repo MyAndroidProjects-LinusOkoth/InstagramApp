@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -26,7 +27,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private RecyclerView rvPost;
-    public static final String TAG = "HomeFragment";\
+    public static final String TAG = "HomeFragment";
     private PostAdapater adapter;
     private List<Post> allPosts;
 
@@ -43,16 +44,11 @@ public class HomeFragment extends Fragment {
 
         allPosts = new ArrayList<>();
 
-        adapter = new PostAdapater(getContext(), allPosts)
+        adapter = new PostAdapater(getContext(), allPosts);
 
+        rvPost.setAdapter(adapter);
 
-
-
-
-
-
-
-
+        rvPost.setLayoutManager(new LinearLayoutManager(getContext()));
 
         queryPost();
 
@@ -86,6 +82,10 @@ public class HomeFragment extends Fragment {
                 for (Post post : posts){
                     Log.i(TAG, "Post: " + post.getDescription() + " username: " + post.getUser().getUsername());
                 }
+
+                allPosts.addAll(posts);
+                adapter.notifyDataSetChanged();
+
 
             }
         });
