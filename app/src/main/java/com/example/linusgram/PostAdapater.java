@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.parse.ParseFile;
+
 import java.util.List;
 
 public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> {
@@ -62,6 +65,16 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
 
             tvDescription.setText(post.getDescription());
             tvUserName.setText(post.getUser().getUsername());
+
+            ParseFile image = post.getImage();
+
+            if (image != null){
+                Glide.with(context)
+                        .load(image.getUrl())
+                        .into(ivImage);
+            }
+
+
 
 
         }
