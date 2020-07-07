@@ -3,6 +3,8 @@ package com.example.linusgram;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -46,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
+        final FragmentManager fragmentManager = getSupportFragmentManager();
+
+        // define your fragments here
+        final Fragment fragment1 = new FirstFragment();
+        final Fragment fragment2 = new SecondFragment();
+        final Fragment fragment3 = new ThirdFragment();
+
         // layout of activity is stored in a special property called root
         View view = binding.getRoot();
         setContentView(view);
@@ -79,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 launchCamera();
+            }
+        });
+
+        binding.bottomNavigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
