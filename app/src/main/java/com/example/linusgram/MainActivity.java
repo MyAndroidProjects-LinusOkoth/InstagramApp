@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.renderscript.ScriptGroup;
 import android.util.Log;
@@ -29,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
-    private File photoFile;
-    private File photoFileName;
+    File photoFile;
+    public String photoFileName = "photo.jpg";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,16 +76,33 @@ public class MainActivity extends AppCompatActivity {
         //Create an intent to take pictures and return control to the app
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         //Create a file reference to access to future access
-        photoFile = getPhotoFileUrl(photoFileName);
+        photoFile = getPhotoFileUri(photoFileName);
 
         //wrap file object into a content provider
-        URI fileProvider = FileProvider.getUriForFile(MainActivity.this, "com.codepath.fleprovider", photoFile);
+        Uri fileProvider = FileProvider.getUriForFile(MainActivity.this, "com.codepath.fleprovider", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
 
         if(intent.resolveActivity(getPackageManager()) != null){
             startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
         }
 
+    }
+
+    public File getPhotoFileUri(String fileName) {
+        // Get safe storage directory for photos
+        // Use `getExternalFilesDir` on Context to access package-specific directories.
+        // This way, we don't need to request external read/write runtime permissions.
+        File mediaStorageDir = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), TAG);
+
+        // Create the storage directory if it does not exist
+        if (!mediaStorageDir.exists() && !mediaStorageDir.mkdirs()){
+            Log.i(TAG, "failed to create directory");
+        }
+
+        // Return the file target for the photo based on filename
+        File file = new File(mediaStorageDir.getPath() + File.separator + fileName);
+
+        return file;
     }
 
     private void savePost(String description, ParseUser currentUser) {
