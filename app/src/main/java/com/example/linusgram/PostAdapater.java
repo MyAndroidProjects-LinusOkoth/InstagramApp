@@ -1,6 +1,7 @@
 package com.example.linusgram;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,23 +13,31 @@ import java.util.List;
 public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> {
 
     private Context context;
-    private List list;
+    private List<Post> posts;
 
+    public PostAdapater(Context context, List<Post> posts) {
+        this.context = context;
+        this.posts = posts;
+    }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view= LayoutInflater.from(context).inflate(R.layout.item_post, parent, false);
+
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Post post = posts.get(position);
+        holder.bimd(post)
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return posts.size();
     }
 
     class ViewHolder extends  RecyclerView.ViewHolder{
