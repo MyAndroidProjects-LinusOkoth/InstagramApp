@@ -64,35 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         //queryPost();
 
-        binding.btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String description = binding.etDescription.getText().toString();
-                if(description.isEmpty()){
-                    Toast.makeText(MainActivity.this, "Description cannot be empty",
-                            Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(photoFile == null || binding.ivPostImage.getDrawable() == null){
-                    Toast.makeText(MainActivity.this, "There is no Image",
-                            Toast.LENGTH_SHORT).show();
-                    return;
-                }
 
-                ParseUser currentUser = ParseUser.getCurrentUser();
-                savePost(description, currentUser, photoFile);
-                binding.etDescription.setText("");
-                binding.ivPostImage.setImageResource(0);
-
-            }
-        });
-
-        binding.btnCaptureImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                launchCamera();
-            }
-        });
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

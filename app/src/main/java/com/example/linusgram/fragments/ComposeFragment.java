@@ -12,8 +12,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.linusgram.MainActivity;
 import com.example.linusgram.R;
+import com.parse.ParseUser;
 
 
 public class ComposeFragment extends Fragment {
@@ -39,6 +42,37 @@ public class ComposeFragment extends Fragment {
         btnCaptureImage = view.findViewById(R.id.btnCaptureImage);
         ivPostImage = view.findViewById(R.id.btnCaptureImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
+
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String description = etDescription.getText().toString();
+                if(description.isEmpty()){
+                    Toast.makeText(getContext(), "Description cannot be empty",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(photoFile == null || ivPostImage.getDrawable() == null){
+                    Toast.makeText(getContext(), "There is no Image",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                savePost(description, currentUser, photoFile);
+                etDescription.setText("");
+                ivPostImage.setImageResource(0);
+
+            }
+        });
+
+        btnCaptureImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchCamera();
+            }
+        });
 
 
     }
