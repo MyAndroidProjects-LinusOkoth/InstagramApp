@@ -1,5 +1,6 @@
 package com.example.linusgram;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
@@ -15,12 +16,14 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.renderscript.ScriptGroup;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.linusgram.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -51,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
         final FragmentManager fragmentManager = getSupportFragmentManager();
 
         // define your fragments here
-        final Fragment fragment1 = new FirstFragment();
-        final Fragment fragment2 = new SecondFragment();
-        final Fragment fragment3 = new ThirdFragment();
+//        final Fragment fragment1 = new FirstFragment();
+  //      final Fragment fragment2 = new SecondFragment();
+    //    final Fragment fragment3 = new ThirdFragment();
 
         // layout of activity is stored in a special property called root
         View view = binding.getRoot();
@@ -91,23 +94,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        binding.bottomNavigation.setOnClickListener(new View.OnClickListener() {
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment;
                 switch (item.getItemId()) {
                     case R.id.action_home:
-                        fragment = fragment1;
+                        Toast.makeText(MainActivity.this, "Home",
+                                Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.action_compose:
-                        fragment = fragment2;
+                        Toast.makeText(MainActivity.this, "Compose",
+                                Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.action_profile:
                     default:
-                        fragment = fragment3;
+                        Toast.makeText(MainActivity.this, "Profile",
+                                Toast.LENGTH_SHORT).show();
                         break;
                 }
-
+                return true;
             }
         });
 
