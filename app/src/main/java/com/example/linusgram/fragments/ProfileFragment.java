@@ -15,27 +15,8 @@ import com.example.linusgram.R;
 
 public class ProfileFragment extends HomeFragment {
 
-
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
-
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+    protected void queryPost() {
+        super.queryPost();
     }
 }
