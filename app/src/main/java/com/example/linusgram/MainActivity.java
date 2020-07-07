@@ -52,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
         final FragmentManager fragmentManager = getSupportFragmentManager();
 
-        // define your fragments here
-//        final Fragment fragment1 = new FirstFragment();
-  //      final Fragment fragment2 = new SecondFragment();
-    //    final Fragment fragment3 = new ThirdFragment();
+        //define your fragments here
+        final Fragment fragment1 = new FirstFragment();
+        final Fragment fragment2 = new SecondFragment();
+        final Fragment fragment3 = new ThirdFragment();
 
         // layout of activity is stored in a special property called root
         View view = binding.getRoot();
