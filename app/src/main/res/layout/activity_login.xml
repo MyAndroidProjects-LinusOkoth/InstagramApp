@@ -16,12 +16,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
-        android:background="@drawable/logintextdrawable"
-        android:text="@string/usernameHint"
-        android:textColor="@color/Black"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:hint="@string/usernameHint"
         android:layout_marginTop="275dp"
         android:layout_marginEnd="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+
          />
 
 
@@ -41,9 +41,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="password"
-        android:textColorHint="@android:color/black"
-        android:textColor="@android:color/black"
-        android:background="@drawable/logintextdrawable"
+        android:hint="@string/password"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:inputType="textPassword"
         android:ems="10" />
 

@@ -16,6 +16,14 @@
         <item name="android:clickable">true</item>
     </style>
 
+    <style name="logintextstyle" >
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:hint">@string/usernameHint</item>
+        <item name="android:textColorHint">@color/Black</item>
+        <item name="android:background">@drawable/logintextdrawable</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
 
 
 </resources>
