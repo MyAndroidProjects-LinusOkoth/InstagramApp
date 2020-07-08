@@ -63,9 +63,9 @@ android:orientation="vertical">
 
         <ImageView
             android:id="@+id/ivSave"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="200dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="180dp"
             android:contentDescription="@string/todo"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ufi_save" />
