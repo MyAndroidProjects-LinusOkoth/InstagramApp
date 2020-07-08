@@ -58,10 +58,13 @@ public class HomeFragment extends Fragment {
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-
-
+                adapter.clear();
+                queryPost();
+                swipeContainer.setRefreshing(false);
             }
         });
+        //configure refreshing colors
+
 
 
 
