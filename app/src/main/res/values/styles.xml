@@ -16,9 +16,6 @@
         <item name="android:clickable">true</item>
     </style>
 
-    <style name="logintextstyle">
-        <item name="android:textColor">@color/LightGrey</item>
-    </style>
 
 
 </resources>

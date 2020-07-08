@@ -16,15 +16,15 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/logintextdrawable"
+        android:text="@string/usernameHint"
+        android:textColor="@color/Black"
         android:layout_marginTop="275dp"
         android:layout_marginEnd="20dp"
-        android:hint="@string/usernameHint"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:autofillHints="username"
-        android:textColorHint="@android:color/black"
-        android:background="@drawable/logintextdrawable"
-        />
+         />
+
+
 
 
 
