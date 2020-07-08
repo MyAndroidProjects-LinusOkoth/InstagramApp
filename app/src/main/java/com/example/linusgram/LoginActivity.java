@@ -13,6 +13,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -53,7 +54,16 @@ public class LoginActivity extends AppCompatActivity {
                 user.setUsername(binding.etUsername.getText().toString());
                 user.setPassword(binding.etPassword.getText().toString());
 
-                user.signUpInBackground()
+                user.signUpInBackground(new SignUpCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e == null) {
+                            goToMainActivity();
+                        }else{
+                            Toast.makeText(LoginActivity.this, "User Already exists", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
             }
         });
