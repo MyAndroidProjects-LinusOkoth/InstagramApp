@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,6 +31,7 @@ public class HomeFragment extends Fragment {
     public static final String TAG = "HomeFragment";
     protected PostAdapater adapter;
     protected List<Post> allPosts;
+    private SwipeRefreshLayout swipeContainer;
 
 
 
@@ -50,6 +52,8 @@ public class HomeFragment extends Fragment {
         rvPost.setAdapter(adapter);
 
         rvPost.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
 
         queryPost();
 
