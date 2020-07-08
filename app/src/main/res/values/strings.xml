@@ -8,5 +8,5 @@
     <string name="login">LOGIN</string>
     <string name="usernameHint">Phone number, email or username</string>
     <string name="password">password</string>
-    <string name="signup">SIGNUP</string>
+    <string name="signup">SIGN UP</string>
 </resources>
