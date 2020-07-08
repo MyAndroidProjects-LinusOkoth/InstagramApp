@@ -19,9 +19,10 @@
         android:backgroundTint="@color/colorPrimary"
         android:layout_marginTop="275dp"
         android:layout_marginEnd="20dp"
+        android:hint="@string/usernameHint"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:autofillHints="username"
         android:textColorHint="@android:color/black"
-        android:textColor="@android:color/black"
         android:background="@android:color/white"
         />
 
@@ -58,7 +59,7 @@
         android:layout_marginEnd="20dp"
         android:text="@string/login"
         android:textColor="@android:color/black"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/instagram_blue"
         />
 
 </RelativeLayout>
