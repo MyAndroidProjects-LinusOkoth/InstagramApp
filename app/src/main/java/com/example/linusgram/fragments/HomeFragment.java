@@ -53,6 +53,16 @@ public class HomeFragment extends Fragment {
 
         rvPost.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        swipeContainer = view.findViewById(R.id.swipeContainer);
+
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+
+            }
+        });
+
 
 
         queryPost();
