@@ -41,6 +41,17 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
 
     }
 
+    public void clear(){
+        posts.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addaLL(List<Post> post){
+
+        posts.addAll(post);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return posts.size();
