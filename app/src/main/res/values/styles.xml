@@ -16,6 +16,15 @@
         <item name="android:clickable">true</item>
     </style>
 
+    <style name="signButton" parent="@android:style/Widget.Button">
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textColor">@color/instagram_blue</item>
+        <item name="android:background">@drawable/buttontemplate</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
     <style name="logintextstyle" >
         <item name="android:textColor">@color/Black</item>
         <item name="android:textSize">12sp</item>
