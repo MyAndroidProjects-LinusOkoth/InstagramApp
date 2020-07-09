@@ -31,6 +31,8 @@ public class DetailsActivity extends AppCompatActivity {
 
         binding.tvDescription.setText(post.getDescription());
 
+        binding.tvTimeStamp.setText(post.getTime());
+
 
     }
 }
