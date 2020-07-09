@@ -43,6 +43,7 @@ public class ProfileFragment extends HomeFragment {
                     Log.i(TAG, "Post: " + post.getDescription() + " username: " + post.getUser().getUsername());
                 }
 
+                allPosts.clear();
                 allPosts.addAll(posts);
                 adapter.notifyDataSetChanged();
 

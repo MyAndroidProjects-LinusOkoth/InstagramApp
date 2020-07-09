@@ -131,6 +131,7 @@ public class HomeFragment extends Fragment {
                     Log.i(TAG, "Post: " + post.getDescription() + " username: " + post.getUser().getUsername());
                 }
 
+                allPosts.clear();
                 allPosts.addAll(posts);
                 adapter.notifyDataSetChanged();
 
