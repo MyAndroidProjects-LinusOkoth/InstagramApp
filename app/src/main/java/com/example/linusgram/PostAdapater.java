@@ -21,6 +21,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
     private Context context;
     private List<Post> posts;
     onClickListener clickListener;
+    public static final int DETAILS_CODE = 200;
 
     public interface onClickListener{
         void onItemClicked(int position, int replyCode);
@@ -97,8 +98,12 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
                 Log.i("pOSN CB ", "IMAGE NOT EXISTING" );
             }
 
-
-
+            ivImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClicked(getAdapterPosition(), DETAILS_CODE);
+                }
+            });
 
         }
     }
