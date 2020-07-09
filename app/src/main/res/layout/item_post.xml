@@ -42,7 +42,7 @@ android:orientation="vertical">
         <TextView
             android:id="@+id/tvName"
             android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
+            android:layout_width="270dp"
             android:layout_marginStart="18dp"
             android:ems="10"
             android:textStyle="bold"
@@ -54,9 +54,10 @@ android:orientation="vertical">
 
         <ImageView
             android:id="@+id/sideIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/media_option_button" />
+            android:layout_marginStart="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/menu" />
     </LinearLayout>
 
 
