@@ -71,7 +71,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
             tvUserName = itemView.findViewById(R.id.tvName);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             ivImage = itemView.findViewById(R.id.ivPostImage);
-            tvUserNameDescription = itemView.findViewById(R.id.tvUserNameDescription)
+            tvUserNameDescription = itemView.findViewById(R.id.tvUserNameDescription);
 
         }
 
@@ -79,6 +79,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
 
             tvDescription.setText(post.getDescription());
             tvUserName.setText(post.getUser().getUsername());
+            tvUserNameDescription.setText(post.getUser().getUsername());
 
             ParseFile image = post.getImage();
 
