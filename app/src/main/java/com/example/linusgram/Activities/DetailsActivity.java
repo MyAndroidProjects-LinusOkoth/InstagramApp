@@ -27,8 +27,9 @@ public class DetailsActivity extends AppCompatActivity {
 
         post = getIntent().getParcelableExtra("post");
 
+        binding.tvUserNameDescription.setText(post.getUser().getUsername());
 
-
+        binding.tvDescription.setText(post.getDescription());
 
 
     }
