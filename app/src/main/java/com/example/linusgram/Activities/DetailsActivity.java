@@ -13,7 +13,7 @@ import com.example.linusgram.databinding.ActivityMainBinding;
 public class DetailsActivity extends AppCompatActivity {
 
     Post post;
-    ActivityDetailsBinding binding
+    ActivityDetailsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
