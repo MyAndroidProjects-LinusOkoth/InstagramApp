@@ -63,7 +63,7 @@ android:orientation="vertical">
                 android:id="@+id/ivSave"
                 android:layout_width="@dimen/WidthOfwidgets"
                 android:layout_height="@dimen/WidthOfwidgets"
-                android:layout_marginStart="220dp"
+                android:layout_marginStart="230dp"
                 android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/ufi_save" />
 
