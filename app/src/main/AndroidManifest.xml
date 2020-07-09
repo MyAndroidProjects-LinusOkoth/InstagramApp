@@ -2,18 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.linusgram">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
         android:name=".ParseApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".DetailsActivity"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -25,8 +25,7 @@
                 android:resource="@xml/fileprovider" />
         </provider>
 
-
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
