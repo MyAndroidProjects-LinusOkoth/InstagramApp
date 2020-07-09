@@ -34,5 +34,7 @@
         <item name="android:backgroundTint">@color/colorPrimary</item>
     </style>
 
+    <dimen name="WidthOfwidgets">25dp</dimen>
+
 
 </resources>
