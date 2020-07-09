@@ -32,7 +32,7 @@
                 android:layout_marginStart="0dp"
                 android:contentDescription="Camera"
                 android:padding="0dp"
-                app:srcCompat="@drawable/backNavigation" />
+                app:srcCompat="@drawable/backnavigation" />
 
             <ImageView
                 android:id="@+id/igLogo"

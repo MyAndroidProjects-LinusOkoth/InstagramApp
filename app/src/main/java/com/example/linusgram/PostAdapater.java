@@ -20,10 +20,16 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
 
     private Context context;
     private List<Post> posts;
+    onClickListener clickListener;
 
-    public PostAdapater(Context context, List<Post> posts) {
+    public interface onClickListener{
+        void onItemClicked(int position, int replyCode);
+    }
+
+    public PostAdapater(Context context, List<Post> posts, onClickListener clickListener) {
         this.context = context;
         this.posts = posts;
+        this.clickListener = clickListener;
     }
 
     @NonNull
