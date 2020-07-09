@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/ig_icon_view"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="200dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -19,7 +19,7 @@
 
         android:layout_marginTop="169dp"
         android:layout_marginEnd="80dp"
-        app:srcCompat="@drawable/nux_dayone_landing_logo" />
+        app:srcCompat="@drawable/iglogocolored" />
 
 
 
@@ -31,7 +31,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="43dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/colorPrimaryDark"
 
