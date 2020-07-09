@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 
     ActivityMainBinding binding;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
         final Fragment profileFragment = new ProfileFragment();
 
         // layout of activity is stored in a special property called root
-        View view = binding.getRoot();
+        final View view = binding.getRoot();
         setContentView(view);
 
 
 
         // Find the toolbar view inside the activity layout
-        Toolbar toolbar = view.findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+         //toolbar = view.findViewById(R.id.toolbar);
+        setSupportActionBar(binding.toolbar);
 
 
 
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment;
                 switch (item.getItemId()) {
                     case R.id.action_home:
+                        binding.toolbar.setVisibility(View.VISIBLE);
                         Toast.makeText(MainActivity.this, "Home",
                                 Toast.LENGTH_SHORT).show();
                         fragment = homeFragment;
