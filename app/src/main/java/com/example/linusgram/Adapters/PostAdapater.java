@@ -91,6 +91,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
             tvDescription.setText(post.getDescription());
             tvUserName.setText(post.getUser().getUsername());
             tvUserNameDescription.setText(post.getUser().getUsername());
+            tvDate.setText(post.getTime());
 
             ParseFile image = post.getImage();
 
