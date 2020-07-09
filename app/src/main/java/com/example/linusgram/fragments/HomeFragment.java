@@ -53,10 +53,6 @@ public class HomeFragment extends Fragment {
 
         rvPost.setAdapter(adapter);
 
-        Toolbar toolbar = view.findViewById(R.id.toolbar);
-        // Sets the Toolbar to act as the ActionBar for this Activity window.
-        // Make sure the toolbar exists in the activity and is not null
-
 
         rvPost.setLayoutManager(new LinearLayoutManager(getContext()));
 

@@ -70,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Find the toolbar view inside the activity layout
-
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
 
 
