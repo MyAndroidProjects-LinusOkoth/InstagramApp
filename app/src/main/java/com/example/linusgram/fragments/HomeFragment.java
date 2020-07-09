@@ -1,5 +1,6 @@
 package com.example.linusgram.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,7 +15,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.Toast;
 
+import com.example.linusgram.DetailsActivity;
 import com.example.linusgram.Post;
 import com.example.linusgram.PostAdapater;
 import com.example.linusgram.R;
@@ -49,7 +53,24 @@ public class HomeFragment extends Fragment {
 
         allPosts = new ArrayList<>();
 
-        adapter = new PostAdapater(getContext(), allPosts);
+
+
+        PostAdapater.onClickListener onClickListener = new PostAdapater.onClickListener() {
+            @Override
+            public void onItemClicked(int position, int replyCode) {
+
+                if (replyCode == PostAdapater.DETAILS_CODE) {
+
+                    Intent intent = new Intent(getContext(), DetailsActivity.class);
+
+                    intent.putExtra("post", allPosts.get(position));
+
+                    startActivity(intent);
+                }
+            }
+        };
+
+        adapter = new PostAdapater(getContext(), allPosts, onClickListener);
 
         rvPost.setAdapter(adapter);
 
