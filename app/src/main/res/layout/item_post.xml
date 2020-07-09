@@ -51,6 +51,12 @@ android:orientation="vertical">
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="Linus"
             />
+
+        <ImageView
+            android:id="@+id/sideIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/media_option_button" />
     </LinearLayout>
 
 
