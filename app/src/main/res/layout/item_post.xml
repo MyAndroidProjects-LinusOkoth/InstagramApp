@@ -155,6 +155,8 @@ android:orientation="vertical">
             />
     </LinearLayout>
 
+
+    <!-- TODO Implement time stamp format -->
     <TextView
         android:id="@+id/tvCreatedAt"
         android:layout_marginStart="8dp"
