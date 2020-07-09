@@ -17,6 +17,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.renderscript.ScriptGroup;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        /;
+
 
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -104,6 +105,13 @@ public class MainActivity extends AppCompatActivity {
         });
         binding.bottomNavigation.setSelectedItemId(R.id.action_home);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
 
