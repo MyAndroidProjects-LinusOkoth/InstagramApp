@@ -62,6 +62,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
         private TextView tvUserName;
         private ImageView ivImage;
         private TextView tvDescription;
+        private TextView tvUserNameDescription;
 
 
 
@@ -70,6 +71,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
             tvUserName = itemView.findViewById(R.id.tvName);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             ivImage = itemView.findViewById(R.id.ivPostImage);
+            tvUserNameDescription = itemView.findViewById(R.id.tvUserNameDescription)
 
         }
 
