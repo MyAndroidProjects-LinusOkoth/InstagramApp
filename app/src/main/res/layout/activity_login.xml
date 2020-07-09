@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <!-- TODO ask about how to turn the logo into black -->
 
     <ImageView
         android:id="@+id/ig_icon_view"
