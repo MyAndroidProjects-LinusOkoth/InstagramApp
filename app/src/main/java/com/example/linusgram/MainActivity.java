@@ -90,12 +90,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_compose:
                         Toast.makeText(MainActivity.this, "Compose",
                                 Toast.LENGTH_SHORT).show();
+                        binding.toolbar.setVisibility(View.GONE);
                         fragment = composeFragment;
                         break;
                     case R.id.action_profile:
                     default:
                         Toast.makeText(MainActivity.this, "Profile",
                                 Toast.LENGTH_SHORT).show();
+                        binding.toolbar.setVisibility(View.GONE);
                         fragment = profileFragment;
                         break;
                 }
