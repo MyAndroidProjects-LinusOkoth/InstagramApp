@@ -1,4 +1,4 @@
-package com.example.linusgram;
+package com.example.linusgram.Models;
 
 import android.app.Application;
 

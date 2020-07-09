@@ -1,4 +1,4 @@
-package com.example.linusgram;
+package com.example.linusgram.Models;
 
 import com.parse.ParseClassName;
 import com.parse.ParseFile;

@@ -1,18 +1,8 @@
 package com.example.linusgram.fragments;
 
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.example.linusgram.Post;
-import com.example.linusgram.R;
+import com.example.linusgram.Models.Post;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;

@@ -1,4 +1,4 @@
-package com.example.linusgram;
+package com.example.linusgram.Adapters;
 
 import android.content.Context;
 import android.util.Log;
@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.linusgram.Models.Post;
+import com.example.linusgram.R;
 import com.parse.ParseFile;
 
 import java.util.List;

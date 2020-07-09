@@ -1,4 +1,4 @@
-package com.example.linusgram;
+package com.example.linusgram.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.linusgram.databinding.ActivityLoginBinding;
-import com.google.android.material.appbar.MaterialToolbar;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;

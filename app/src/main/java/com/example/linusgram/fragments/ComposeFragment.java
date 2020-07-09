@@ -22,18 +22,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.linusgram.MainActivity;
-import com.example.linusgram.Post;
+import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
-import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.File;
-import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
