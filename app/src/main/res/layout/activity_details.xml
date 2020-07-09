@@ -51,5 +51,15 @@
         android:textColor="@color/Black"
         tools:text="Description34" />
 
+    <TextView
+        android:id="@+id/tvTimeStamp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvDescription"
+        android:layout_marginStart="13dp"
+        android:layout_toEndOf="@+id/circularContainer"
+        android:textSize="10sp"
+        android:text="2 hours ago" />
+
 
 </RelativeLayout>
