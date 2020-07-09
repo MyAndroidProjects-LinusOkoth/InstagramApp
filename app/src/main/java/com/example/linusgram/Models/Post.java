@@ -5,6 +5,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @ParseClassName("Post")
@@ -37,7 +38,14 @@ public class Post extends ParseObject {
     }
 
     public String getTime(){
-        Date date
+
+        Date date = getCreatedAt();
+
+        SimpleDateFormat  format = new SimpleDateFormat("E MM dd yyyy hh:mm");
+
+        String currDate = format.format(date);
+
+        return currDate;
 
     }
 
