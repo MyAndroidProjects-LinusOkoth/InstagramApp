@@ -54,10 +54,10 @@ android:orientation="vertical">
 
         <ImageView
             android:id="@+id/sideIcon"
-            android:layout_marginStart="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/menu" />
+            android:layout_marginStart="30dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/menuitem" />
     </LinearLayout>
 
 
