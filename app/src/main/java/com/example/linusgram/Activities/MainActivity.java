@@ -47,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
 
+        binding.Camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
 
         // Find the toolbar view inside the activity layout
          //toolbar = view.findViewById(R.id.toolbar);
