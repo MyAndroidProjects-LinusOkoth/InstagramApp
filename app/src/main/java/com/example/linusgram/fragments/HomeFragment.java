@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.linusgram.Activities.DetailsActivity;
+import com.example.linusgram.HelperClasses.EndlessRecyclerViewScrollListener;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.Adapters.PostAdapater;
 import com.example.linusgram.R;
@@ -34,6 +35,7 @@ public class HomeFragment extends Fragment {
     protected PostAdapater adapter;
     protected List<Post> allPosts;
     private SwipeRefreshLayout swipeContainer;
+    private EndlessRecyclerViewScrollListener scrollListener;
 
 
 
@@ -47,6 +49,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rvPost = view.findViewById(R.id.rvPost);
+
 
         allPosts = new ArrayList<>();
 
