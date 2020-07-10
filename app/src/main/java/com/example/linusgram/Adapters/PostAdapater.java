@@ -47,9 +47,16 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.item_post, parent, false);
+        View view = null;
+
+        if (CLASS_CODE == HOME_FRAGMENT_CODE){
+            view = LayoutInflater.from(context).inflate(R.layout.item_post, parent, false);
+        } else if (CLASS_CODE == PROFILE_FRAGMENT_CODE){
+            view = LayoutInflater.from(context).inflate(R.layout.fragment_profile, parent, false);
+        }
 
         return new ViewHolder(view);
+
     }
 
     @Override
