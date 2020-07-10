@@ -19,12 +19,17 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
 import com.example.linusgram.databinding.ActivityMainBinding;
 import com.example.linusgram.fragments.ComposeFragment;
 import com.example.linusgram.fragments.HomeFragment;
 import com.example.linusgram.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.io.File;
 
@@ -143,6 +148,25 @@ public class MainActivity extends AppCompatActivity {
         File file = new File(mediaStorageDir.getPath() + File.separator + fileName);
 
         return file;
+    }
+
+    private void savePost(String description, ParseUser currentUser, File photoFile) {
+        Post post = new Post();
+        post.setDescription(description);
+        post.setUser(currentUser);
+        post.setImage(new ParseFile(photoFile));
+
+        post.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, "Error saving post ", e);
+                    return;
+                }
+                Log.i(TAG, "Post was saved");
+            }
+        });
+
     }
 
 
