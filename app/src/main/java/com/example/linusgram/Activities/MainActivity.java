@@ -71,13 +71,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Take your profile picture",
                         Toast.LENGTH_SHORT).show();
 
+                // TODO add the profile upload feature
+
             }
         });
 
 
 
-        // Find the toolbar view inside the activity layout
-         //toolbar = view.findViewById(R.id.toolbar);
+
         setSupportActionBar(binding.toolbar);
 
 
