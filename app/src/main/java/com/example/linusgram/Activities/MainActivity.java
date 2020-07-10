@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(MainActivity.this, "Description cannot be empty",
+                Toast.makeText(MainActivity.this, "Take your profile picture",
                         Toast.LENGTH_SHORT).show();
 
             }
