@@ -76,12 +76,11 @@ public class ProfileFragment extends Fragment {
         }
 
         tvUsername.setText(user.getUsername());
-        ParseFile image = user.getParseFile("profilePic");
+        ParseFile image = user.getParseFile("ProfilePic");
         if (image != null){
 
             Glide.with(getContext())
                     .load(image.getUrl())
-                    .circleCrop()
                     .into(ivProfilePic);
         }
 
