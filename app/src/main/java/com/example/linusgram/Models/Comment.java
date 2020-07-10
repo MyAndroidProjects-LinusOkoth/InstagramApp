@@ -1,8 +1,10 @@
 package com.example.linusgram.Models;
 
 
+import com.parse.FindCallback;
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 
@@ -30,6 +32,17 @@ public class Comment extends ParseObject {
 
     public Post getPost(){return (Post) getParseObject(KEY_POST);}
     public void setPost(Post post){ put(KEY_POST, post);}
+
+
+    public static void query(FindCallback callback, Post post) {
+        ParseQuery<Comment> query = ParseQuery.getQuery(Comment.class);
+        query.include(Comment.KEY_USER_COMMENT);
+        query.include(Comment.KEY_POST);
+        query.whereEqualTo(Comment.KEY_POST, post);
+        query.addDescendingOrder(Post.KEY_CREATED_AT);
+        query.findInBackground(callback);
+
+    }
 
 
 
