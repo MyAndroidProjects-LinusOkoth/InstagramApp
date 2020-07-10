@@ -8,8 +8,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.linusgram.Adapters.PostAdapater;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
 import com.parse.FindCallback;
@@ -30,6 +32,9 @@ public class ProfileFragment extends HomeFragment {
     private TextView tvUsername;
     private Button btnEditProfile;
     private ParseUser user;
+    private RecyclerView rvUserPosts;
+    private List<Post> userPosts;
+    private PostAdapater userAdapter;
 
     public ProfileFragment() {
     }
@@ -55,12 +60,8 @@ public class ProfileFragment extends HomeFragment {
 
         tvUsername.setText(user.getUsername());
         ParseFile image = user.getParseFile("profilePic");
-        if (image == null){
-            Glide.with(getContext())
-                    .load(getResources().getString(R.string.DEFAULT_PROFILE_PIC))
-                    .circleCrop()
-                    .into(ivProfilePic);
-        } else {
+        if (image != null){
+
             Glide.with(getContext())
                     .load(image.getUrl())
                     .circleCrop()
@@ -74,10 +75,6 @@ public class ProfileFragment extends HomeFragment {
                 @Override
                 public void onClick(View view) {
                     //When clicked, it launches the EditProfile Activity
-                    Intent intent = new Intent(getContext(), EditProfileActivity.class);
-                    //pass info from that post into Details Activity
-                    intent.putExtra("user", user);
-                    getContext().startActivity(intent);
                 }
             });
         } else {
