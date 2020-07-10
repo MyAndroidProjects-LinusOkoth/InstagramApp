@@ -66,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                ParseUser currentUser = ParseUser.getCurrentUser();
+
+                saveProfilePic(currentUser, photoFile);
+
             }
         });
 
@@ -107,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         binding.bottomNavigation.setSelectedItemId(R.id.action_home);
+
+
+
 
     }
 
@@ -150,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         return file;
     }
 
-    private void savePost( ParseUser currentUser, File photoFile) {
+    private void saveProfilePic( ParseUser currentUser, File photoFile) {
 
         post.setUser(currentUser);
         post.setImage(new ParseFile(photoFile));
