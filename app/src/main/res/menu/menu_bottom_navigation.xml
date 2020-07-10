@@ -12,6 +12,14 @@
         android:icon="@drawable/instagram_new_post_filled_24"
         android:title="Compose"
         app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="Profile"
+        app:showAsAction="always" />
+
     <item
         android:id="@+id/action_profile"
         android:icon="@drawable/instagram_user_filled_24"
