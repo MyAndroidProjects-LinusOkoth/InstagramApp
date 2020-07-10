@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
 import com.parse.FindCallback;
