@@ -49,9 +49,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = null;
 
-        if (CLASS_CODE == HOME_FRAGMENT_CODE){
-            view = LayoutInflater.from(context).inflate(R.layout.item_post, parent, false);
-        } else if (CLASS_CODE == PROFILE_FRAGMENT_CODE){
+      if (CLASS_CODE == PROFILE_FRAGMENT_CODE){
             view = LayoutInflater.from(context).inflate(R.layout.item_user_post, parent, false);
         }
 
@@ -92,7 +90,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
         public void bind(final Post post) {
 
-            
+
 
         }
 
