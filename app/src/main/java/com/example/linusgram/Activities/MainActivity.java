@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -26,6 +27,7 @@ import com.example.linusgram.fragments.ComposeFragment;
 import com.example.linusgram.fragments.HomeFragment;
 import com.example.linusgram.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -66,11 +68,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
-
-                ParseUser currentUser = ParseUser.getCurrentUser();
-
-                saveProfilePic(currentUser, photoFile);
+                Toast.makeText(MainActivity.this, "Description cannot be empty",
+                        Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -159,22 +158,6 @@ public class MainActivity extends AppCompatActivity {
         return file;
     }
 
-    private void saveProfilePic( ParseUser currentUser, File photoFile) {
-
-        currentUser.
-
-        post.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e != null) {
-                    Log.e(TAG, "Error saving post ", e);
-                    return;
-                }
-                Log.i(TAG, "Post was saved");
-            }
-        });
-
-    }
 
 
 
