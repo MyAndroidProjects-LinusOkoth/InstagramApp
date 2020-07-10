@@ -80,8 +80,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
     class ViewHolder extends  RecyclerView.ViewHolder{
 
-
-
+        ImageView ivImage;
 
 
         public ViewHolder(@NonNull View itemView) {
