@@ -24,6 +24,7 @@ import com.example.linusgram.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class HomeFragment extends Fragment {
     protected List<Post> allPosts;
     private SwipeRefreshLayout swipeContainer;
     private EndlessRecyclerViewScrollListener scrollListener;
+    protected ParseUser specifiedUser;
 
 
 
@@ -117,7 +119,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onRefresh() {
                 adapter.clear();
-                queryPost();
+                queryPost(0);
                 swipeContainer.setRefreshing(false);
             }
         });
@@ -130,7 +132,7 @@ public class HomeFragment extends Fragment {
 
 
 
-        queryPost();
+        queryPost(0);
 
 
     }
@@ -138,7 +140,7 @@ public class HomeFragment extends Fragment {
     public void loadNextDataFromBackend(int offset) {
 
         //TODO ask how to load more data
-        queryPost();
+        queryPost(1);
     }
 
 
@@ -158,7 +160,7 @@ public class HomeFragment extends Fragment {
     }
 
     protected void queryPost(final int page) {
-        Post.query(page, DISPLAY_LIMIT, filterForUser, new FindCallback<Post>() {
+        Post.query(page, DISPLAY_LIMIT, specifiedUser, new FindCallback<Post>() {
             @Override
             public void done(List<Post> posts, ParseException e) {
                 if (e != null){

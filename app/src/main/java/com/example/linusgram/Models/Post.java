@@ -58,21 +58,16 @@ public class Post extends ParseObject {
 
     }
 
-    public static void query(int page, int limit, ParseUser filterForUser, FindCallback callback){
+    public static void query(int page, int limit, ParseUser currentUser, FindCallback callback) {
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         query.include(Post.KEY_USER);
-        if(filterForUser != null) {
-            query.whereEqualTo(Post.KEY_USER, filterForUser);
+        if (currentUser != null) {
+            query.whereEqualTo(Post.KEY_USER, currentUser);
         }
         query.setLimit(limit);
         query.setSkip(page * limit);
         query.addDescendingOrder(Post.KEY_CREATED_AT);
         query.findInBackground(callback);
 
-
-
-
-
-
-
     }
+}
