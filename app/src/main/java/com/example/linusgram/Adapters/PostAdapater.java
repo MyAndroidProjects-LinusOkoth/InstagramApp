@@ -94,7 +94,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
 
         }
 
-        public void bind(Post post) {
+        public void bind(final Post post) {
 
             tvDescription.setText(post.getDescription());
             tvUserName.setText(post.getUser().getUsername());
@@ -114,6 +114,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
                 public void onClick(View view) {
                     clickListener.onItemClicked(getAdapterPosition(), LIKE_CODE);
                     likeIcon.setImageResource(R.drawable.ufi_heart_active);
+                    tvNumberofLikes.setText(post.getLikes().toString());
                 }
             });
 
