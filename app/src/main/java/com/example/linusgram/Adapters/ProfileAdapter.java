@@ -26,11 +26,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
     private Context context;
     private List<Post> posts;
     onClickListener clickListener;
-    public static final int DETAILS_CODE = 200;
-    public static final int PROFILE_CODE = 300;
-    public static final int LIKE_CODE = 400;
 
-    public static final int HOME_FRAGMENT_CODE = 21;
     public static final int PROFILE_FRAGMENT_CODE = 22;
 
     public interface onClickListener{
@@ -89,6 +85,12 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
         }
 
         public void bind(final Post post) {
+
+            String postPic = post.getImage().getUrl();
+
+            Glide.with(context)
+                    .load(postPic)
+                    .into(ivImage);
 
 
 
