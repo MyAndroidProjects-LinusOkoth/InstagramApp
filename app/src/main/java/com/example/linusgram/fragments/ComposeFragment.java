@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.linusgram.Models.Post;
@@ -44,6 +45,7 @@ public class ComposeFragment extends Fragment {
     File photoFile;
     public String photoFileName = "photo.jpg";
     public static final String TAG = "ComposeFragment";
+    private ProgressBar progressBar;
 
     public ComposeFragment() {
         // Required empty public constructor
@@ -164,6 +166,8 @@ public class ComposeFragment extends Fragment {
         post.setDescription(description);
         post.setUser(currentUser);
         post.setImage(new ParseFile(photoFile));
+
+
 
         post.saveInBackground(new SaveCallback() {
             @Override
