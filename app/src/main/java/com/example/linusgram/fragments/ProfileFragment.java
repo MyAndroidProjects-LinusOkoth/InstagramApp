@@ -1,6 +1,9 @@
 package com.example.linusgram.fragments;
 
 import android.util.Log;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.linusgram.Models.Post;
 import com.parse.FindCallback;
@@ -12,6 +15,14 @@ import java.util.List;
 
 
 public class ProfileFragment extends HomeFragment {
+
+    private ImageView ivProfilePic;
+    private TextView tvBio;
+    private TextView tvUsername;
+    private Button btnEditProfile;
+
+    public ProfileFragment() {
+    }
 
     @Override
     protected void queryPost() {
