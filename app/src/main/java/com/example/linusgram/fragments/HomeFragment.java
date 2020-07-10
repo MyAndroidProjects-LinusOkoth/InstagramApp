@@ -66,9 +66,10 @@ public class HomeFragment extends Fragment {
                 }
                 if (replyCode == PostAdapater.PROFILE_CODE){
 
-                    Intent intent = new Intent(getContext(), ProfileFragment.class);
+                    final Fragment profileFragment = new ProfileFragment();
 
-                    startActivity(intent);
+                    getFragmentManager().beginTransaction().replace(R.id.flContainer, profileFragment).commit();
+
 
                 }
 
