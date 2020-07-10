@@ -7,13 +7,14 @@ import com.parse.ParseFile;
 @ParseClassName("Post")
 public class user {
 
-    public static final String KEY_DESCRIPTION = "ProfilePic";
+    public static final String KEY_PROFILE_PICTURE = "ProfilePic";
 
     public ParseFile getImage(){
-        return getParseFile(KEY_DESCRIPTION);
+        return getParseFile(KEY_PROFILE_PICTURE);
     }
 
-    private ParseFile getParseFile(String keyDescription) {
+    public void setImage(ParseFile parseFile){
+        put (KEY_PROFILE_PICTURE, parseFile);
     }
 
 }
