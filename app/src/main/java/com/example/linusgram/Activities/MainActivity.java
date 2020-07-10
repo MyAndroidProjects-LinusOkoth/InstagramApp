@@ -150,9 +150,8 @@ public class MainActivity extends AppCompatActivity {
         return file;
     }
 
-    private void savePost(String description, ParseUser currentUser, File photoFile) {
-        Post post = new Post();
-        post.setDescription(description);
+    private void savePost( ParseUser currentUser, File photoFile) {
+
         post.setUser(currentUser);
         post.setImage(new ParseFile(photoFile));
 
