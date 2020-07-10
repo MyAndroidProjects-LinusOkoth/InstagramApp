@@ -55,7 +55,7 @@ public class ProfileFragment extends HomeFragment {
         super.onViewCreated(view, savedInstanceState);
 
         ivProfilePic = view.findViewById(R.id.ivProfileImage);
-        tvBio = view.findViewById(R.id.tvUsername);
+        tvBio = view.findViewById(R.id.tvBio);
         tvUsername = view.findViewById(R.id.tvUsername);
         btnEditProfile = view.findViewById(R.id.btnEditProfile);
 
@@ -100,7 +100,7 @@ public class ProfileFragment extends HomeFragment {
             public void onItemClicked(int position, int replyCode) {
 
             }
-        },PostAdapater.PROFILE_CODE);
+        },PostAdapater.PROFILE_FRAGMENT_CODE);
 
         //set the adapter on the recycler view
         rvUserPosts.setAdapter(userAdapter);
