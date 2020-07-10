@@ -80,27 +80,13 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
     class ViewHolder extends  RecyclerView.ViewHolder{
 
-        private TextView tvUserName;
-        private ImageView ivImage;
-        private TextView tvDescription;
-        private TextView tvUserNameDescription;
-        private TextView tvDate;
-        private TextView tvNumberofLikes;
-        private ImageView profilePic;
-        private ImageView likeIcon;
+
 
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvUserName = itemView.findViewById(R.id.tvName);
-            tvDescription = itemView.findViewById(R.id.tvDescription);
-            ivImage = itemView.findViewById(R.id.ivPostImage);
-            tvUserNameDescription = itemView.findViewById(R.id.tvUserNameDescription);
-            tvDate = itemView.findViewById(R.id.tvCreatedAt);
-            tvNumberofLikes = itemView.findViewById(R.id.NumberofActualLikes);
-            profilePic = itemView.findViewById(R.id.ivProfileImage);
-            likeIcon = itemView.findViewById(R.id.ivLike);
+
 
 
 
@@ -108,53 +94,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
         public void bind(final Post post) {
 
-            tvDescription.setText(post.getDescription());
-            tvUserName.setText(post.getUser().getUsername());
-            tvUserNameDescription.setText(post.getUser().getUsername());
-            tvDate.setText(post.getTime());
-            tvNumberofLikes.setText(post.getLikes().toString());
-
-            profilePic.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    clickListener.onItemClicked(getAdapterPosition(), PROFILE_CODE);
-                }
-            });
-
-            likeIcon.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    clickListener.onItemClicked(getAdapterPosition(), LIKE_CODE);
-                    likeIcon.setImageResource(R.drawable.ufi_heart_active);
-                    tvNumberofLikes.setText(post.getLikes().toString());
-                }
-            });
-
-
-
-            String profilepic = post.getUser().getParseFile("ProfilePic").getUrl();
-
-            Glide.with(context)
-                    .load(profilepic)
-                    .into(profilePic);
-
-            ParseFile image = post.getImage();
-
-            if (image != null){
-                Glide.with(context)
-                        .load(image.getUrl())
-                        .into(ivImage);
-            }else{
-                Log.i("pOSN CB ", "IMAGE NOT EXISTING" );
-            }
-
-            ivImage.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    clickListener.onItemClicked(getAdapterPosition(), DETAILS_CODE);
-                }
-            });
-
         }
+
+
     }
 }

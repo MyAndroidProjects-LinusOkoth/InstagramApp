@@ -17,6 +17,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.example.linusgram.Adapters.PostAdapater;
+import com.example.linusgram.Adapters.ProfileAdapter;
 import com.example.linusgram.HelperClasses.EndlessRecyclerViewScrollListener;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
@@ -43,7 +44,7 @@ public class ProfileFragment extends Fragment {
     private ParseUser user;
     private RecyclerView rvUserPosts;
     private List<Post> userPosts;
-    private PostAdapater userAdapter;
+    private ProfileAdapter userAdapter;
     private static final String TAG = "ProfileFragment";
     private SwipeRefreshLayout swipeContainer;
     private EndlessRecyclerViewScrollListener scrollListener;
@@ -61,7 +62,6 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         ivProfilePic = view.findViewById(R.id.ivProfileImage);
         tvBio = view.findViewById(R.id.tvBio);
         tvUsername = view.findViewById(R.id.tvUsername);
@@ -103,7 +103,7 @@ public class ProfileFragment extends Fragment {
 
         userPosts = new ArrayList<>();
         //instantiate the adapter
-        userAdapter = new PostAdapater(getContext(), userPosts, new PostAdapater.onClickListener() {
+        userAdapter = new ProfileAdapter(getContext(), userPosts, new ProfileAdapter.onClickListener() {
             @Override
             public void onItemClicked(int position, int replyCode) {
 
