@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -32,7 +33,7 @@ import java.util.List;
 import java.util.logging.Handler;
 
 
-public class ProfileFragment extends HomeFragment {
+public class ProfileFragment extends Fragment {
 
     private static final int DISPLAY_LIMIT = 20 ;
     private ImageView ivProfilePic;
