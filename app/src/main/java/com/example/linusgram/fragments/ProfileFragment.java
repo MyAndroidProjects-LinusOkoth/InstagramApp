@@ -10,9 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.example.linusgram.Adapters.PostAdapater;
+import com.example.linusgram.HelperClasses.EndlessRecyclerViewScrollListener;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
 import com.parse.FindCallback;
@@ -25,6 +27,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Handler;
 
 
 public class ProfileFragment extends HomeFragment {
@@ -37,6 +40,9 @@ public class ProfileFragment extends HomeFragment {
     private RecyclerView rvUserPosts;
     private List<Post> userPosts;
     private PostAdapater userAdapter;
+
+    private SwipeRefreshLayout swipeContainer;
+    private EndlessRecyclerViewScrollListener scrollListener;
 
     public ProfileFragment() {
     }
@@ -103,7 +109,7 @@ public class ProfileFragment extends HomeFragment {
         rvUserPosts.setLayoutManager(gridLayoutManager);
         queryPosts(0);
 
-        swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
+        swipeContainer =  view.findViewById(R.id.swipeContainer);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
