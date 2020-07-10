@@ -3,6 +3,7 @@ package com.example.linusgram.Models;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 
 @ParseClassName("Comment")
@@ -18,6 +19,13 @@ public class Comment extends ParseObject {
     }
     public void setBody(String description){
         put (KEY_BODY, description);
+    }
+
+    public ParseUser getUser(){
+        return getParseUser(KEY_USER_COMMENT);
+    }
+    public void setUser(ParseUser user){
+        put (KEY_USER_COMMENT, user);
     }
 
 
