@@ -105,6 +105,12 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
                 }
             });
 
+            ParseFile profilepic = post.getUser().getParseFile("ProfilePic");
+
+            Glide.with(context)
+                    .load(profilepic)
+                    .into(profilePic);
+
             ParseFile image = post.getImage();
 
             if (image != null){
