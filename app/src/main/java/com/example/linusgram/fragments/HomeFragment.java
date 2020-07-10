@@ -64,6 +64,15 @@ public class HomeFragment extends Fragment {
 
                     startActivity(intent);
                 }
+                if (replyCode == PostAdapater.PROFILE_CODE){
+
+                    Intent intent = new Intent(getContext(), ProfileFragment.class);
+
+                    startActivity(intent);
+
+                }
+
+
             }
         };
 

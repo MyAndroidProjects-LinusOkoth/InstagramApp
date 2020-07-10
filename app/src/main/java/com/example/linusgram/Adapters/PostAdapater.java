@@ -73,7 +73,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
         private TextView tvUserNameDescription;
         private TextView tvDate;
         private TextView tvNumberofLikes;
-        private TextView profilePic;
+        private ImageView profilePic;
 
 
 
@@ -101,7 +101,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
             profilePic.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    clickListener.onItemClicked(getAdapterPosition(), );
+                    clickListener.onItemClicked(getAdapterPosition(), PROFILE_CODE);
                 }
             });
 
@@ -118,7 +118,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
             ivImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    clickListener.onItemClicked(getAdapterPosition(), PROFILE_CODE);
+                    clickListener.onItemClicked(getAdapterPosition(), DETAILS_CODE);
                 }
             });
 
