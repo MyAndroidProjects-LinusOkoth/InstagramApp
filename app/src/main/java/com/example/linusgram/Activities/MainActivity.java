@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
+
                 ParseUser currentUser = ParseUser.getCurrentUser();
 
                 saveProfilePic(currentUser, photoFile);
@@ -159,8 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void saveProfilePic( ParseUser currentUser, File photoFile) {
 
-        post.setUser(currentUser);
-        post.setImage(new ParseFile(photoFile));
+        currentUser.
 
         post.saveInBackground(new SaveCallback() {
             @Override

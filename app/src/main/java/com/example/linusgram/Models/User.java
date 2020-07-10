@@ -7,7 +7,7 @@ import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 @ParseClassName("User")
-public class user extends ParseObject {
+public class User extends ParseObject {
 
     public static final String KEY_PROFILE_PICTURE = "ProfilePic";
 
