@@ -113,13 +113,19 @@
         android:layout_below="@id/tvTimeStamp"/>
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:id="@+id/comment1"
+        android:layout_marginTop="10dp">
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/circularContainer1"
         android:layout_width="35dp"
         android:layout_height="35dp"
         app:cardCornerRadius="35dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/line"
         android:layout_marginStart="8dp"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true">
@@ -141,10 +147,9 @@
         android:id="@+id/tvUserNameDescription1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/line"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/circularContainer"
+        android:layout_toEndOf="@+id/circularContainer1"
         android:textColor="@color/Black"
         android:textStyle="bold"
         tools:text="Description23" />
@@ -155,55 +160,117 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvUserNameDescription1"
         android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/circularContainer"
+        android:layout_toEndOf="@+id/circularContainer1"
         android:textColor="@color/Black"
         tools:text="Description34" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/circularContainer1"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        app:cardCornerRadius="35dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/line"
-        android:layout_marginStart="8dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true">
+    </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/ivProfileImage1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/comment1"
+        android:id="@+id/comment2"
+        android:layout_marginTop="10dp">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/circularContainer2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:cardCornerRadius="35dp"
+            android:layout_marginStart="8dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_centerVertical="true">
 
-    </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/ivProfileImage2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.cardview.widget.CardView>
 
 
-    <TextView
-        android:id="@+id/tvUserNameDescription1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/circularContainer"
-        android:textColor="@color/Black"
-        android:textStyle="bold"
-        tools:text="Description23" />
+        <TextView
+            android:id="@+id/tvUserNameDescription2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/circularContainer2"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            tools:text="Description23" />
 
-    <TextView
-        android:id="@+id/tvDescription1"
+        <TextView
+            android:id="@+id/tvDescription2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvUserNameDescription2"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/circularContainer2"
+            android:textColor="@color/Black"
+            tools:text="Description34" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvUserNameDescription1"
-        android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/circularContainer"
-        android:textColor="@color/Black"
-        tools:text="Description34" />
+        android:layout_below="@+id/comment2"
+        android:id="@+id/comment3"
+        android:layout_marginTop="10dp">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/circularContainer3"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:cardCornerRadius="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/ivProfileImage3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tvUserNameDescription3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/circularContainer3"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            tools:text="Description23" />
+
+        <TextView
+            android:id="@+id/tvDescription3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvUserNameDescription3"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/circularContainer3"
+            android:textColor="@color/Black"
+            tools:text="Description34" />
+
+    </RelativeLayout>
 
 
 
