@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.sax.StartElementListener;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -96,6 +97,16 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
                         fragment = homeFragment;
                         break;
+
+                    case R.id.action_logout:
+                        Toast.makeText(MainActivity.this, "Logging out",
+                                Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        ParseUser.logOut();
+                        ParseUser currentUser = ParseUser.getCurrentUser();
+                        startActivity(intent);
+                        break;
+
                     case R.id.action_compose:
                         Toast.makeText(MainActivity.this, "Compose",
                                 Toast.LENGTH_SHORT).show();
