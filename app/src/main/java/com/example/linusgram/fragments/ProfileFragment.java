@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.linusgram.Models.Post;
+import com.example.linusgram.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
