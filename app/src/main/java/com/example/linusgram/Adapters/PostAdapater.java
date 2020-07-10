@@ -26,6 +26,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
     private List<Post> posts;
     onClickListener clickListener;
     public static final int DETAILS_CODE = 200;
+    public static final int PROFILE_CODE = 300;
 
     public interface onClickListener{
         void onItemClicked(int position, int replyCode);
@@ -97,6 +98,13 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
             tvDate.setText(post.getTime());
             tvNumberofLikes.setText(post.getLikes().toString());
 
+            profilePic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClicked(getAdapterPosition(), );
+                }
+            });
+
             ParseFile image = post.getImage();
 
             if (image != null){
@@ -110,7 +118,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
             ivImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    clickListener.onItemClicked(getAdapterPosition(), DETAILS_CODE);
+                    clickListener.onItemClicked(getAdapterPosition(), PROFILE_CODE);
                 }
             });
 
