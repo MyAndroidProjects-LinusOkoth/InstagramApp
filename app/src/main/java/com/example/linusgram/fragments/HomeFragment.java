@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.linusgram.Activities.DetailsActivity;
 import com.example.linusgram.HelperClasses.EndlessRecyclerViewScrollListener;
@@ -92,8 +93,19 @@ public class HomeFragment extends Fragment {
 
         rvPost.setAdapter(adapter);
 
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        rvPost.setLayoutManager(linearLayoutManager);
 
-        rvPost.setLayoutManager(new LinearLayoutManager(getContext()));
+        scrollListener = new EndlessRecyclerViewScrollListener(linearLayoutManager) {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
+                // Triggered only when new data needs to be appended to the list
+                // Add whatever code is needed to append new items to the bottom of the list
+                loadNextDataFromBackend(page);
+            }
+        };
+        // Adds the scroll listener to RecyclerView
+        rvPost.addOnScrollListener(scrollListener);
 
         swipeContainer = view.findViewById(R.id.swipeContainer);
 
