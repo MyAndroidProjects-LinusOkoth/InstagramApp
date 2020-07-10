@@ -123,11 +123,11 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
 
 
             // TODO LOAD PROFILE PICTURES
-            ParseFile profilepic = post.getUser().getParseFile("ProfilePic");
+           // ParseFile profilepic = post.getUser().getParseFile("ProfilePic");
 
-            Glide.with(context)
-                    .load(profilepic)
-                    .into(profilePic);
+            //Glide.with(context)
+              //      .load(profilepic)
+                //    .into(profilePic);
 
             ParseFile image = post.getImage();
 

@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.linusgram.Activities.LoginActivity;
 import com.example.linusgram.Activities.MainActivity;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
@@ -53,6 +54,10 @@ public class LogoutFragment extends Fragment {
             public void onClick(View view) {
                 Toast.makeText(getContext(), "Logging out",
                         Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                ParseUser.logOut();
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                startActivity(intent);
             }
         });
 
