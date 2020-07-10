@@ -33,6 +33,8 @@ public class DetailsActivity extends AppCompatActivity {
 
         binding.tvTimeStamp.setText(post.getTime());
 
+        binding.NumberofActualLikes.setText(post.getLikes().toString());
+
 
 
 
