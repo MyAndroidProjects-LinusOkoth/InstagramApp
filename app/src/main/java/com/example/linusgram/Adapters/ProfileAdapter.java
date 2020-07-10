@@ -86,12 +86,13 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
-
+            ivImage = itemView.findViewById(R.id.ivImage);
 
         }
 
         public void bind(final Post post) {
+
+            
 
         }
 
