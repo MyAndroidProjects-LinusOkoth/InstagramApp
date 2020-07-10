@@ -84,6 +84,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
             tvUserNameDescription = itemView.findViewById(R.id.tvUserNameDescription);
             tvDate = itemView.findViewById(R.id.tvCreatedAt);
             tvNumberofLikes = itemView.findViewById(R.id.NumberofActualLikes);
+            profilePic = itemView.findViewById(R.id.ivProfileImage);
 
 
         }
