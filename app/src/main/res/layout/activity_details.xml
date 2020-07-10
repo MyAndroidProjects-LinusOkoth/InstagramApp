@@ -84,11 +84,21 @@
         android:textStyle="bold"
         tools:text="Description23" />
 
+    <ImageView
+        android:id="@+id/ivPostImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/tvUserNameDescription"
+        android:layout_toEndOf="@+id/circularContainer"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/todo"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvUserNameDescription"
+        android:layout_below="@id/ivPostImage"
         android:layout_marginStart="13dp"
         android:layout_toEndOf="@+id/circularContainer"
         android:textColor="@color/Black"
