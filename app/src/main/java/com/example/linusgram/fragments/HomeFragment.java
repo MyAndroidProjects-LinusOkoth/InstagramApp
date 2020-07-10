@@ -157,30 +157,6 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
-    protected void queryPost(){
-        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
-        query.include(Post.KEY_USER);
-        query.setLimit(20);
-        query.addDescendingOrder(Post.KEY_CREATED_AT);
-        query.findInBackground(new FindCallback<Post>() {
-            @Override
-            public void done(List<Post> posts, ParseException e) {
-                if (e != null){
-                    Log.e(TAG, "Error getting Post", e);
-                    return;
-                }
-                for (Post post : posts){
-                    Log.i(TAG, "Post: " + post.getDescription() + " username: " + post.getUser().getUsername());
-                }
-
-                allPosts.clear();
-                allPosts.addAll(posts);
-                adapter.notifyDataSetChanged();
-
-
-            }
-        });
-    }
     protected void queryPost(final int page) {
         Post.query(page, DISPLAY_LIMIT, filterForUser, new FindCallback<Post>() {
             @Override
