@@ -16,6 +16,8 @@ import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
 import com.parse.ParseFile;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> {
@@ -70,6 +72,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
         private TextView tvUserNameDescription;
         private TextView tvDate;
         private TextView tvNumberofLikes;
+        private TextView profilePic;
 
 
 
