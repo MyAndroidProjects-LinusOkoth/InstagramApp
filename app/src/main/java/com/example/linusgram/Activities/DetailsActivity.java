@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.bumptech.glide.Glide;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
 import com.example.linusgram.databinding.ActivityDetailsBinding;
@@ -34,6 +35,10 @@ public class DetailsActivity extends AppCompatActivity {
         binding.tvTimeStamp.setText(post.getTime());
 
         binding.NumberofActualLikes.setText(post.getLikes().toString());
+
+        Glide.with(this)
+                .load(post.getImage().getUrl())
+                .into(binding.ivPostImage);
 
 
 
