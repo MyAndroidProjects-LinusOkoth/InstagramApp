@@ -3,9 +3,11 @@ package com.example.linusgram.Models;
 
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
 
-@ParseClassName("Post")
-public class user {
+@ParseClassName("User")
+public class user extends ParseObject {
 
     public static final String KEY_PROFILE_PICTURE = "ProfilePic";
 
