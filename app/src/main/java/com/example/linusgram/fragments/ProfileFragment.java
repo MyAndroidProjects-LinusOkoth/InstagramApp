@@ -107,21 +107,16 @@ public class ProfileFragment extends HomeFragment {
         //set the layout manager on the recycler view
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
         rvUserPosts.setLayoutManager(gridLayoutManager);
-        queryPosts(0);
+        queryPost(0);
 
         swipeContainer =  view.findViewById(R.id.swipeContainer);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 //get latest 20 Instagram items
-                queryPosts(0);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Stop animation (This will be after 2 seconds)
-                        swipeContainer.setRefreshing(false);
-                    }
-                }, 2000); //Delay in millis
+                queryPost(0);
+                swipeContainer.setRefreshing(false);
+
 
             }
         });
@@ -136,7 +131,7 @@ public class ProfileFragment extends HomeFragment {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
                 //get the next 20 posts
-                queryPosts(page);
+                queryPost(page);
             }
         };
         rvUserPosts.addOnScrollListener(scrollListener);
@@ -172,4 +167,26 @@ public class ProfileFragment extends HomeFragment {
         });
 
     }
+
+    protected void queryPosts(final int page) {
+        Post.query(page, DISPLAY_LIMIT, user, new FindCallback<Post>() {
+            @Override
+            public void done(List<Post> posts, ParseException e) {
+                if (e != null){
+                    Log.e(TAG, "Issue with getting posts", e);
+                    return;
+
+                }
+                for(Post post: posts){
+                    Log.i(TAG, "Post: " + post.getDescription() + " Username: " + post.getUser().getUsername());
+                }
+                if(page == 0) {
+                    userAdapter.clear();
+                }
+                userPosts.addAll(posts);
+                userAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+
 }

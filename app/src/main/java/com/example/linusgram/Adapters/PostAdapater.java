@@ -30,8 +30,8 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
     public static final int PROFILE_CODE = 300;
     public static final int LIKE_CODE = 400;
 
-    public static final int HOME_CODE = 21;
-    public static final int PROFILE_CODE = 22;
+    public static final int HOME_FRAGMENT_CODE = 21;
+    public static final int PROFILE_FRAGMENT_CODE = 22;
 
     public interface onClickListener{
         void onItemClicked(int position, int replyCode);

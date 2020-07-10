@@ -27,10 +27,13 @@ import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 
 public class HomeFragment extends Fragment {
 
+    private static final int DISPLAY_LIMIT = 20;
     private RecyclerView rvPost;
     public static final String TAG = "HomeFragment";
     protected PostAdapater adapter;
@@ -90,7 +93,7 @@ public class HomeFragment extends Fragment {
             }
         };
 
-        adapter = new PostAdapater(getContext(), allPosts, onClickListener, PostAdapater.HOME_CODE);
+        adapter = new PostAdapater(getContext(), allPosts, onClickListener, PostAdapater.HOME_FRAGMENT_CODE);
 
         rvPost.setAdapter(adapter);
 
@@ -175,6 +178,26 @@ public class HomeFragment extends Fragment {
                 adapter.notifyDataSetChanged();
 
 
+            }
+        });
+    }
+    protected void queryPost(final int page) {
+        Post.query(page, DISPLAY_LIMIT, filterForUser, new FindCallback<Post>() {
+            @Override
+            public void done(List<Post> posts, ParseException e) {
+                if (e != null){
+                    Log.e(TAG, "Issue with getting posts", e);
+                    return;
+
+                }
+                for(Post post: posts){
+                    Log.i(TAG, "Post: " + post.getDescription() + " Username: " + post.getUser().getUsername());
+                }
+                if(page == 0) {
+                    adapter.clear();
+                }
+                allPosts.addAll(posts);
+                adapter.notifyDataSetChanged();
             }
         });
     }
