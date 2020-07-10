@@ -72,6 +72,11 @@ public class HomeFragment extends Fragment {
 
 
                 }
+                if (replyCode == PostAdapater.LIKE_CODE){
+
+
+
+                }
 
 
             }

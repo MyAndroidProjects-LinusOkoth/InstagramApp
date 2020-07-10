@@ -113,6 +113,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
                 @Override
                 public void onClick(View view) {
                     clickListener.onItemClicked(getAdapterPosition(), LIKE_CODE);
+                    likeIcon.setImageResource(R.drawable.ufi_heart_active);
                 }
             });
 
