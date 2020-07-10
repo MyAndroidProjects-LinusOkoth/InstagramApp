@@ -41,6 +41,7 @@ public class Post extends ParseObject {
     public Number getLikes(){return getNumber(KEY_NUMBER_LIKES);}
     public void setLikes(Number likes){  put(KEY_NUMBER_LIKES, likes);}
 
+
     public String getTime(){
 
         Date date = getCreatedAt();

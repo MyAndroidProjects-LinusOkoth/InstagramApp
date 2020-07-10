@@ -36,6 +36,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         binding.NumberofActualLikes.setText(post.getLikes().toString());
 
+
         Glide.with(this)
                 .load(post.getImage().getUrl())
                 .into(binding.ivPostImage);
