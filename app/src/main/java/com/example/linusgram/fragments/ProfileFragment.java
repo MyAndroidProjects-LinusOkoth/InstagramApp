@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -87,17 +88,12 @@ public class ProfileFragment extends HomeFragment {
 
         userPosts = new ArrayList<>();
         //instantiate the adapter
-        userAdapter = new PostAdapter(getContext(), userPosts, new PostAdapter.onClickListener() {
+        userAdapter = new PostAdapater(getContext(), userPosts, new PostAdapater.onClickListener() {
             @Override
-            public void onProfilePicAction(int position) {
-                //do nothing
-            }
+            public void onItemClicked(int position, int replyCode) {
 
-            @Override
-            public void onUsernameAction(int position) {
-                //do nothing
             }
-        }, ProfileFragment.class.getSimpleName());
+        },PostAdapater.PROFILE_CODE);
 
         //set the adapter on the recycler view
         rvUserPosts.setAdapter(userAdapter);

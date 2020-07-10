@@ -42,6 +42,7 @@ public class HomeFragment extends Fragment {
 
 
 
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -89,7 +90,7 @@ public class HomeFragment extends Fragment {
             }
         };
 
-        adapter = new PostAdapater(getContext(), allPosts, onClickListener);
+        adapter = new PostAdapater(getContext(), allPosts, onClickListener, PostAdapater.HOME_CODE);
 
         rvPost.setAdapter(adapter);
 

@@ -22,6 +22,7 @@ import java.util.List;
 
 public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> {
 
+    private final int CLASS_CODE;
     private Context context;
     private List<Post> posts;
     onClickListener clickListener;
@@ -29,14 +30,18 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
     public static final int PROFILE_CODE = 300;
     public static final int LIKE_CODE = 400;
 
+    public static final int HOME_CODE = 21;
+    public static final int PROFILE_CODE = 22;
+
     public interface onClickListener{
         void onItemClicked(int position, int replyCode);
     }
 
-    public PostAdapater(Context context, List<Post> posts, onClickListener clickListener) {
+    public PostAdapater(Context context, List<Post> posts, onClickListener clickListener, int CLASS_CODE) {
         this.context = context;
         this.posts = posts;
         this.clickListener = clickListener;
+        this.CLASS_CODE = CLASS_CODE;
     }
 
     @NonNull
