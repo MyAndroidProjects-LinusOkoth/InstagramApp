@@ -13,6 +13,7 @@ import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
@@ -27,6 +28,7 @@ public class ProfileFragment extends HomeFragment {
     private TextView tvBio;
     private TextView tvUsername;
     private Button btnEditProfile;
+    private ParseUser user;
 
     public ProfileFragment() {
     }
@@ -37,7 +39,7 @@ public class ProfileFragment extends HomeFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ivProfilePic = view.findViewById(R.id.ivProfilePic);
+        ivProfilePic = view.findViewById(R.id.ivProfileImage);
         tvBio = view.findViewById(R.id.tvUsername);
         tvUsername = view.findViewById(R.id.tvUsername);
         btnEditProfile = view.findViewById(R.id.btnEditProfile);
