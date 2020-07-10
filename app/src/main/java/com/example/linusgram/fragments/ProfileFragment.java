@@ -147,7 +147,7 @@ public class ProfileFragment extends HomeFragment {
 
 
 
-    protected void queryPosts(final int page) {
+    protected void queryPost(final int page) {
         Post.query(page, DISPLAY_LIMIT, user, new FindCallback<Post>() {
             @Override
             public void done(List<Post> posts, ParseException e) {
