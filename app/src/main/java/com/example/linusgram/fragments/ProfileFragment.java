@@ -98,7 +98,7 @@ public class ProfileFragment extends HomeFragment {
         }
 
 
-        rvUserPosts = view.findViewById(R.id.rvPosts);
+        rvUserPosts = view.findViewById(R.id.rvPost);
 
         userPosts = new ArrayList<>();
         //instantiate the adapter
