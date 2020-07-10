@@ -44,7 +44,7 @@ public class ProfileFragment extends Fragment {
     private RecyclerView rvUserPosts;
     private List<Post> userPosts;
     private PostAdapater userAdapter;
-
+    private static final String TAG = "ProfileFragment";
     private SwipeRefreshLayout swipeContainer;
     private EndlessRecyclerViewScrollListener scrollListener;
 
