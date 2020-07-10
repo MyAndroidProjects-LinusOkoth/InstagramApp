@@ -27,6 +27,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
     onClickListener clickListener;
     public static final int DETAILS_CODE = 200;
     public static final int PROFILE_CODE = 300;
+    public static final int LIKE_CODE = 400;
 
     public interface onClickListener{
         void onItemClicked(int position, int replyCode);
@@ -74,6 +75,7 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
         private TextView tvDate;
         private TextView tvNumberofLikes;
         private ImageView profilePic;
+        private ImageView likeIcon;
 
 
 
@@ -86,6 +88,8 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
             tvDate = itemView.findViewById(R.id.tvCreatedAt);
             tvNumberofLikes = itemView.findViewById(R.id.NumberofActualLikes);
             profilePic = itemView.findViewById(R.id.ivProfileImage);
+            likeIcon = itemView.findViewById(R.id.ivLike);
+
 
 
         }
@@ -104,6 +108,15 @@ public class PostAdapater extends RecyclerView.Adapter<PostAdapater.ViewHolder> 
                     clickListener.onItemClicked(getAdapterPosition(), PROFILE_CODE);
                 }
             });
+
+            likeIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClicked(getAdapterPosition(), LIKE_CODE);
+                }
+            });
+
+
 
 
 
