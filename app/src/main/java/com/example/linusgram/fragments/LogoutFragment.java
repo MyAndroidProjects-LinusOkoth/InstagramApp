@@ -46,6 +46,8 @@ public class LogoutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+
+
     }
 
     @Override
@@ -53,9 +55,7 @@ public class LogoutFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
-    // The onCreateView method is called when Fragment should create its View object hierarchy,
-    // either dynamically or via XML layout inflation.
-    //Setup any handles to view objects here
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
