@@ -28,6 +28,7 @@ import com.example.linusgram.R;
 import com.example.linusgram.databinding.ActivityMainBinding;
 import com.example.linusgram.fragments.ComposeFragment;
 import com.example.linusgram.fragments.HomeFragment;
+import com.example.linusgram.fragments.LogoutFragment;
 import com.example.linusgram.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.Parse;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         final Fragment composeFragment = new ComposeFragment();
         final Fragment homeFragment = new HomeFragment();
         final Fragment profileFragment = new ProfileFragment();
+        final Fragment logoutfragment = new LogoutFragment();
 
         // layout of activity is stored in a special property called root
         final View view = binding.getRoot();
@@ -101,10 +103,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_logout:
                         Toast.makeText(MainActivity.this, "Logging out",
                                 Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        ParseUser.logOut();
-                        ParseUser currentUser = ParseUser.getCurrentUser();
-                        startActivity(intent);
+                        binding.toolbar.setVisibility(View.GONE);
+                        fragment = logoutfragment;
                         break;
 
                     case R.id.action_compose:

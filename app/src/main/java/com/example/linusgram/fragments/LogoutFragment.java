@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.linusgram.Activities.MainActivity;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
 import com.parse.ParseException;
@@ -45,7 +46,15 @@ public class LogoutFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Button logout = view.findViewById(R.id.btnLogout);
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Logging out",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }
