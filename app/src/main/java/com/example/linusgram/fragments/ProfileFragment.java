@@ -64,7 +64,7 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        MainActivity.setToolBarvisible();
+        MainActivity.setToolBarInvisible();
         ivProfilePic = view.findViewById(R.id.ivProfileImage);
         tvBio = view.findViewById(R.id.tvBio);
         tvUsername = view.findViewById(R.id.tvUsername);
