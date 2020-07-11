@@ -7,9 +7,9 @@
     <application
         android:name=".Models.ParseApplication"
         android:allowBackup="true"
-        android:icon="@drawable"
+        android:icon="@mipmap/ig_launch_icon_foreground"
         android:label=""
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ig_launch_icon_foreground"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
