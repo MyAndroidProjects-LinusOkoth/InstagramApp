@@ -79,7 +79,7 @@ public class HomeFragment extends Fragment {
                 if (replyCode == PostAdapater.PROFILE_CODE){
                     Fragment fragment = new ProfileFragment();
                     Bundle bundle = new Bundle();
-                    bundle.putParcelable("user", user);
+                    bundle.putParcelable("user", allPosts.get(position).getUser());
                     fragment.setArguments(bundle);
 
                     //Go from this fragment to profile fragment
