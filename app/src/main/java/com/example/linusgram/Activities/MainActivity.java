@@ -47,11 +47,16 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
+    private static ActivityMainBinding binding;
 
-    ActivityMainBinding binding;
+
     Toolbar toolbar;
     File photoFile;
     public String photoFileName = "photo.jpg";
+
+    public static void setToolBarInvisible() {
+        binding.toolbar.setVisibility(View.INVISIBLE);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.linusgram.Activities.DetailsActivity;
+import com.example.linusgram.Activities.MainActivity;
 import com.example.linusgram.HelperClasses.EndlessRecyclerViewScrollListener;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.Adapters.PostAdapater;
@@ -81,6 +82,8 @@ public class HomeFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putParcelable("user", allPosts.get(position).getUser());
                     fragment.setArguments(bundle);
+
+                    MainActivity.setToolBarInvisible();
 
                     //Go from this fragment to profile fragment
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
