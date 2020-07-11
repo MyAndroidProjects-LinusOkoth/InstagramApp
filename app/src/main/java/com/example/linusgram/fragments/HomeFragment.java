@@ -139,7 +139,6 @@ public class HomeFragment extends Fragment {
 
     public void loadNextDataFromBackend(int offset) {
 
-        //TODO ask how to load more data
         queryPost(1);
     }
 
