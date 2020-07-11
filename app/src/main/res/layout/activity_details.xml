@@ -157,13 +157,15 @@
 
     <Button
         android:id="@+id/sendComment"
+        style="@style/LoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="15dp"
-        android:text="Button" />
+        android:textColor="@color/Black"
+        android:text="Comment" />
 
     <EditText
         android:id="@+id/editComment"
