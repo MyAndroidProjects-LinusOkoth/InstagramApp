@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.linusgram.Adapters.CommentAdapter;
@@ -48,6 +49,20 @@ public class DetailsActivity extends AppCompatActivity {
         binding.tvTimeStamp.setText(post.getTime());
 
         binding.NumberofActualLikes.setText(post.getLikes().toString());
+
+
+        binding.sendComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String body = binding.editComment.getText();
+
+                if ({
+                    Toast.makeText(this, "Body cannot be empty", Toast.LENGTH_SHORT).show();
+                }
+                Comment comment = new Comment();
+                comment.setBody(binding);
+            }
+        });
 
         String profilepic = post.getUser().getParseFile("ProfilePic").getUrl();
 
