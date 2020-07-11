@@ -34,7 +34,7 @@ public class Comment extends ParseObject {
     public void setPost(Post post){ put(KEY_POST, post);}
 
 
-    public static void query(FindCallback callback, Post post) {
+    public static void query( Post post, FindCallback callback) {
         ParseQuery<Comment> query = ParseQuery.getQuery(Comment.class);
         query.include(Comment.KEY_USER_COMMENT);
         query.include(Comment.KEY_POST);
