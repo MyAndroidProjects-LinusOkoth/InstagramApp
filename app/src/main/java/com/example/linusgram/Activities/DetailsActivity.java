@@ -56,8 +56,8 @@ public class DetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String body = binding.editComment.getText().toString();
 
-                if ({
-                    Toast.makeText(this, "Body cannot be empty", Toast.LENGTH_SHORT).show();
+                if (body.isEmpty()){
+                    Toast.makeText(DetailsActivity.this, "Body cannot be empty", Toast.LENGTH_SHORT).show();
                 }
                 Comment comment = new Comment();
                 comment.setBody(binding);
