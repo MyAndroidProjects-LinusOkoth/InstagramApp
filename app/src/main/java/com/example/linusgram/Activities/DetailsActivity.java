@@ -71,8 +71,11 @@ public class DetailsActivity extends AppCompatActivity {
                 comment.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
-                        Toast.makeText(DetailsActivity.this, "Comment posted", Toast.LENGTH_SHORT).show();
-                        queryComments(post);
+                        if(e == null) {
+                            Toast.makeText(DetailsActivity.this, "Comment posted", Toast.LENGTH_SHORT).show();
+                            queryComments(post);
+                            binding.editComment.setText("");
+                        }
                     }
                 });
             }
