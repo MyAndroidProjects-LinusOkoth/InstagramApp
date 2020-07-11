@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
+import com.example.linusgram.Activities.MainActivity;
 import com.example.linusgram.Adapters.PostAdapater;
 import com.example.linusgram.Adapters.ProfileAdapter;
 import com.example.linusgram.HelperClasses.EndlessRecyclerViewScrollListener;
@@ -62,6 +63,8 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        MainActivity.setToolBarvisible();
         ivProfilePic = view.findViewById(R.id.ivProfileImage);
         tvBio = view.findViewById(R.id.tvBio);
         tvUsername = view.findViewById(R.id.tvUsername);

@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
         binding.toolbar.setVisibility(View.GONE);
     }
 
+    public static void setToolBarvisible() {
+        binding.toolbar.setVisibility(View.VISIBLE);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

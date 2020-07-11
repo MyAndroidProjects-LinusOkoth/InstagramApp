@@ -59,6 +59,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rvPost = view.findViewById(R.id.rvPost);
+        MainActivity.setToolBarvisible();
 
 
         allPosts = new ArrayList<>();
@@ -82,8 +83,6 @@ public class HomeFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putParcelable("user", allPosts.get(position).getUser());
                     fragment.setArguments(bundle);
-
-                    MainActivity.setToolBarInvisible();
 
                     //Go from this fragment to profile fragment
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
