@@ -1,6 +1,8 @@
 package com.example.linusgram.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -69,7 +71,13 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
+        //set the adapter on the recycler view
+        binding.rvComment.setAdapter(commentAdapter);
 
+        //set the layout manager on the recycler view
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        binding.rvComment.setLayoutManager(linearLayoutManager);
+        queryPost(post);
 
 
     }
