@@ -18,6 +18,9 @@ import com.example.linusgram.databinding.ActivityDetailsBinding;
 import com.example.linusgram.databinding.ActivityMainBinding;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,9 +61,20 @@ public class DetailsActivity extends AppCompatActivity {
 
                 if (body.isEmpty()){
                     Toast.makeText(DetailsActivity.this, "Body cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 Comment comment = new Comment();
-                comment.setBody(binding);
+                comment.setBody(body);
+                comment.setUser(ParseUser.getCurrentUser());
+                comment.setPost(post);
+
+                comment.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        Toast.makeText(DetailsActivity.this, "Comment posted", Toast.LENGTH_SHORT).show();
+                        queryComments(post);
+                    }
+                });
             }
         });
 
@@ -92,12 +106,12 @@ public class DetailsActivity extends AppCompatActivity {
         //set the layout manager on the recycler view
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         binding.rvComment.setLayoutManager(linearLayoutManager);
-        queryPost(post);
+        queryComments(post);
 
 
     }
 
-    protected void queryPost(final Post post) {
+    protected void queryComments(final Post post) {
         Comment.query(post, new FindCallback<Comment>(){
             @Override
             public void done(List<Comment> coments, ParseException e) {
@@ -109,7 +123,7 @@ public class DetailsActivity extends AppCompatActivity {
                 for(Comment comment: coments){
                     Log.i(TAG, "Comment: " + comment.getBody() + " Username: " + comment.getUser().getUsername());
                 }
-
+                comments.clear();
                 comments.addAll(coments);
                 commentAdapter.notifyDataSetChanged();
             }
