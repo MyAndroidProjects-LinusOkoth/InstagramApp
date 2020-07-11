@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public String photoFileName = "photo.jpg";
 
     public static void setToolBarInvisible() {
-        binding.toolbar.setVisibility(View.INVISIBLE);
+        binding.toolbar.setVisibility(View.GONE);
     }
 
     @Override
