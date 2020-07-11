@@ -80,18 +80,21 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
             super(itemView);
 
             ivImage = itemView.findViewById(R.id.ivProfileImageComment);
-            body = itemView.findViewById(R.id.tv)
+            body = itemView.findViewById(R.id.tvDescriptionComment);
+            userName = itemView.findViewById(R.id.tvUserNameDescriptionComment);
 
         }
 
-        public void bind(final Post post) {
+        public void bind(final Comment comment) {
 
-            String postPic = post.getImage().getUrl();
+            String profilePic = comment.getUser().getParseFile("ProfilePic").getUrl();
 
             Glide.with(context)
-                    .load(postPic)
+                    .load(profilePic)
                     .into(ivImage);
 
+            body.setText(comment.getBody());
+            userName.setText(comment.getUser().getUsername());
 
 
         }
