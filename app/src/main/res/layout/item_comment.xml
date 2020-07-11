@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/comment2"
-    android:id="@+id/comment3"
+    android:id="@+id/comment"
     android:layout_marginTop="10dp">
 
 
@@ -14,14 +13,13 @@
         android:id="@+id/circularContainer3"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:visibility="gone"
         app:cardCornerRadius="35dp"
         android:layout_marginStart="8dp"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true">
 
         <ImageView
-            android:id="@+id/ivProfileImage3"
+            android:id="@+id/ivProfileImageComment"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -34,12 +32,11 @@
 
 
     <TextView
-        android:id="@+id/tvUserNameDescription3"
+        android:id="@+id/tvUserNameDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginStart="13dp"
-        android:visibility="gone"
         android:layout_toEndOf="@+id/circularContainer3"
         android:textColor="@color/Black"
         android:textStyle="bold"
@@ -49,8 +46,7 @@
         android:id="@+id/tvDescription3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_below="@id/tvUserNameDescription3"
+        android:layout_below="@id/tvUserNameDescription"
         android:layout_marginStart="13dp"
         android:layout_toEndOf="@+id/circularContainer3"
         android:textColor="@color/Black"
