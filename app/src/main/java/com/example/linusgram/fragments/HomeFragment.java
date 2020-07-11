@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -75,10 +77,17 @@ public class HomeFragment extends Fragment {
                     startActivity(intent);
                 }
                 if (replyCode == PostAdapater.PROFILE_CODE){
+                    Fragment fragment = new ProfileFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable("user", user);
+                    fragment.setArguments(bundle);
 
-                    final Fragment profileFragment = new ProfileFragment();
-
-                    getFragmentManager().beginTransaction().replace(R.id.flContainer, profileFragment).commit();
+                    //Go from this fragment to profile fragment
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.flContainer, fragment);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
 
 
                 }
