@@ -54,7 +54,7 @@ public class DetailsActivity extends AppCompatActivity {
         binding.sendComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String body = binding.editComment.getText();
+                String body = binding.editComment.getText().toString();
 
                 if ({
                     Toast.makeText(this, "Body cannot be empty", Toast.LENGTH_SHORT).show();
