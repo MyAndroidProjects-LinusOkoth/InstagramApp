@@ -32,7 +32,7 @@
 
 
     <TextView
-        android:id="@+id/tvUserNameDescription"
+        android:id="@+id/tvUserNameDescriptionComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -43,10 +43,10 @@
         tools:text="Description23" />
 
     <TextView
-        android:id="@+id/tvDescription3"
+        android:id="@+id/tvDescriptionComment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvUserNameDescription"
+        android:layout_below="@id/tvUserNameDescriptionComment"
         android:layout_marginStart="13dp"
         android:layout_toEndOf="@+id/circularContainer3"
         android:textColor="@color/Black"

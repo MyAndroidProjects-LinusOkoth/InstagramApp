@@ -65,18 +65,22 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return posts.size();
+        return comments.size();
     }
 
     class ViewHolder extends  RecyclerView.ViewHolder{
 
         ImageView ivImage;
+        TextView body;
+        TextView userName;
+
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            ivImage = itemView.findViewById(R.id.ivImage);
+            ivImage = itemView.findViewById(R.id.ivProfileImageComment);
+            body = itemView.findViewById(R.id.tv)
 
         }
 
