@@ -6,7 +6,7 @@
 
 
     <application
-        android:name=".Models.ParseApplication"
+        android:name=".Utils.ParseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ig_launch_icon_foreground"
         android:label=""

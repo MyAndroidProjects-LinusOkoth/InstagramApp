@@ -1,7 +1,9 @@
-package com.example.linusgram.Models;
+package com.example.linusgram.Utils;
 
 import android.app.Application;
 
+import com.example.linusgram.Models.Comment;
+import com.example.linusgram.Models.Post;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
