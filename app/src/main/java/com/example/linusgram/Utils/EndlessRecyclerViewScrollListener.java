@@ -1,4 +1,4 @@
-package com.example.linusgram.HelperClasses;
+package com.example.linusgram.Utils;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;

@@ -19,20 +19,18 @@ import com.bumptech.glide.Glide;
 import com.example.linusgram.Activities.MainActivity;
 import com.example.linusgram.Adapters.PostAdapater;
 import com.example.linusgram.Adapters.ProfileAdapter;
-import com.example.linusgram.HelperClasses.EndlessRecyclerViewScrollListener;
+import com.example.linusgram.Utils.EndlessRecyclerViewScrollListener;
 import com.example.linusgram.Models.Post;
 import com.example.linusgram.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Handler;
 
 
 public class ProfileFragment extends Fragment {
