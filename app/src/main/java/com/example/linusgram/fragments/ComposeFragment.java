@@ -48,6 +48,8 @@ public class ComposeFragment extends Fragment {
     public String photoFileName = "photo.jpg";
     public static final String TAG = "ComposeFragment";
     private ProgressBar progressBar;
+    public final static int PICK_PHOTO_CODE = 1046;
+
 
     public ComposeFragment() {
         // Required empty public constructor
@@ -186,6 +188,16 @@ public class ComposeFragment extends Fragment {
         });
 
         progressBar.setVisibility(ProgressBar.INVISIBLE);
+
+    }
+
+    public void onPickPhoto(View view){
+        //Create an intent for picking a photo from gallery
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+        if(intent.resolveActivity(getContext().getPackageManager()) != null){
+            startActivityForResult(intent, PICK_PHOTO_CODE);
+        }
 
     }
 
