@@ -1,5 +1,6 @@
 package com.example.linusgram.fragments;
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -36,6 +37,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 
+import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.RuntimePermissions;
 
 import static android.app.Activity.RESULT_OK;
@@ -209,6 +211,7 @@ public class ComposeFragment extends Fragment {
 
     }
 
+    @NeedsPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
     public void onPickPhoto(View view){
         //Create an intent for picking a photo from gallery
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
