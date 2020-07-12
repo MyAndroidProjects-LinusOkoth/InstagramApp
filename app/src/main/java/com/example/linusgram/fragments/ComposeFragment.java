@@ -34,6 +34,7 @@ import com.parse.SaveCallback;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 
 import permissions.dispatcher.RuntimePermissions;
 
@@ -133,7 +134,15 @@ public class ComposeFragment extends Fragment {
             } else { // Result was a failure
                 Toast.makeText(getContext(), "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
+
+        }if((data != null) && requestCode == PICK_PHOTO_CODE){
+            Uri photoUri = data.getData();
+            //Load the image located in the photo Uri
+            Bitmap selectedImage = loadFromUri(photoUri);
+
+            ivPostImage.setImageBitmap(selectedImage);
         }
+
     }
 
     private void launchCamera() {
