@@ -2,7 +2,7 @@
 
 **LinusGram** is a photo sharing app using Parse as its backend.
 
-Time spent: **21** hours spent in total
+Time spent: **33** hours spent in total
 
 ## User Stories
 
@@ -21,7 +21,7 @@ The following **stretch** features are implemented:
 
 - [x] Style the login page to look like the real Instagram login page.
 - [x] Style the feed to look like the real Instagram feed.
-- [x] User should switch between different tabs - viewing all posts (feed view), capture (camera and photo gallery view) and profile tabs (posts made) using fragments and a Bottom Navigation View.
+- [x] User should switch between different tabs - viewing all posts (feed view), capture (camera and gallery view) and profile tabs (posts made) using fragments and a Bottom Navigation View.
 - [x] User can load more posts once he or she reaches the bottom of the feed using endless scrolling.
 - [x] Show the username and creation time for each post
 - [x] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse
@@ -37,14 +37,14 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Better ways to implement the comments section
+2. Better ways to style the xml code without layering the layouts
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/Ajuogaaz/linusgram/blob/master/sample.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
