@@ -101,6 +101,12 @@ public class ComposeFragment extends Fragment {
                 launchCamera();
             }
         });
+        ivPostImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onPickPhoto(view);
+            }
+        });
 
 
     }
