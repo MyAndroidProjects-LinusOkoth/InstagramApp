@@ -3,7 +3,9 @@ package com.example.linusgram.fragments;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.ImageDecoder;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -31,6 +33,7 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.File;
+import java.io.IOException;
 
 import permissions.dispatcher.RuntimePermissions;
 
@@ -201,8 +204,23 @@ public class ComposeFragment extends Fragment {
 
     }
 
+    public Bitmap loadFromUri(Uri photoUri){
+        Bitmap image = null;
 
+        try {
+            //Check for the version of android
+            if(Build.VERSION.SDK_INT >27 ){
+                ImageDecoder.Source source = ImageDecoder.createSource(getContext().getContentResolver(), photoUri);
+                image = ImageDecoder.decodeBitmap(source);
 
+            }else{
+                image  = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), photoUri);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  image;
 
+    }
 
 }
