@@ -2,7 +2,7 @@
 
 **LinusGram** is a photo sharing app using Parse as its backend.
 
-Time spent: **21** hours spent in total
+Time spent: **33** hours spent in total
 
 ## User Stories
 
@@ -37,8 +37,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Better ways to implement the comments section
+2. Better ways to style the xml code without layering the layouts
 
 ## Video Walkthrough
 
