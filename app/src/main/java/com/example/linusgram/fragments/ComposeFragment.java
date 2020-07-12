@@ -195,7 +195,7 @@ public class ComposeFragment extends Fragment {
 
         progressBar.setVisibility(ProgressBar.VISIBLE);
 
-        //TODO ADD DELAY SO THAT PROGRESS BAR CAN BE SEEN
+
         post.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
