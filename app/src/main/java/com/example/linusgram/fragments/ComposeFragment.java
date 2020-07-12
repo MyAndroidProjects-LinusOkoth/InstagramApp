@@ -32,9 +32,11 @@ import com.parse.SaveCallback;
 
 import java.io.File;
 
+import permissions.dispatcher.RuntimePermissions;
+
 import static android.app.Activity.RESULT_OK;
 
-
+@RuntimePermissions
 public class ComposeFragment extends Fragment {
 
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
